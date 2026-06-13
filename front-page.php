@@ -226,38 +226,40 @@
         <h2 class="index__title index__title--blog">ブログ</h2>
         <div class="container">
             <ul class="index-blog__list">
-                <ul class="index-blog__list">
-                    <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'posts_per_page' => 3,
-                    );
-                    $the_query = new WP_Query($args);
-                    ?>
-                    <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                            <li class="index-blog__item">
-                                <a href="<?php the_permalink(); ?>">
-                                    <div class="index-blog__img">
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <?php the_post_thumbnail('full'); ?>
-                                        <?php else : ?>
-                                            <img src="<?php echo get_theme_file_uri('/images/photo/no-image.jpg'); ?>" alt="No Image">
-                                        <?php endif; ?>
-                                        <span class="img__heading">
-                                            <?php
-                                            $cat = get_the_category();
-                                            echo $cat[0]->name;
-                                            ?>
-                                        </span>
-                                    </div>
-                                    <h3 class="index-blog__title"><?php the_title(); ?></h3>
-                                    <time class="index-blog__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
-                                </a>
-                            </li>
-                    <?php endwhile;
-                        wp_reset_postdata();
-                    endif; ?>
-                </ul>
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 3,
+                );
+                $the_query = new WP_Query($args);
+                ?>
+                <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <li class="index-blog__item">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="index-blog__img">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail('full'); ?>
+                                    <?php else : ?>
+                                        <img src="<?php echo get_theme_file_uri('/images/photo/no-image.jpg'); ?>" alt="No Image">
+                                    <?php endif; ?>
+                                    <span class="img__heading">
+                                        <?php
+                                        $cat = get_the_category();
+                                        if (! empty($cat)) {
+                                            echo esc_html($cat[0]->name);
+                                        } else {
+                                            echo 'その他';
+                                        }
+                                        ?>
+                                    </span>
+                                </div>
+                                <h3 class="index-blog__title"><?php the_title(); ?></h3>
+                                <time class="index-blog__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
+                            </a>
+                        </li>
+                <?php endwhile;
+                    wp_reset_postdata();
+                endif; ?>
             </ul>
             <a class="link-blog" href="<?php echo esc_url(home_url('/blog/')); ?>">ブログ一覧へ</a>
         </div>

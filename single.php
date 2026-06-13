@@ -46,35 +46,39 @@
                     <?php endif; ?>
                     <span class="img__heading">
                         <?php $cat = get_the_category();
-                        if ($cat) echo esc_html($cat[0]->name); ?>
+                        if (!empty($cat)) echo esc_html($cat[0]->name); ?>
                     </span>
                 </div>
                 <h1><?php echo esc_html(get_the_title()); ?></h1>
                 <time class="post__time" datetime="<?php the_time('c') ?>"><?php the_time('Y.m.d'); ?></time>
+                <?php
+                $share_url   = urlencode(get_permalink());
+                $share_title = urlencode(get_the_title());
+                ?>
                 <ul class="blog-details__sns-list">
                     <li class="sns__item sns__item--facebook">
-                        <a href="#">
-                            <img src="<?php echo get_theme_file_uri('/images/icons/icon-share-facebook.svg') ?>" alt="Facebook"><span>Facebook</span>
+                        <a href="<?php echo esc_url('https://www.facebook.com/share.php?u=' . $share_url); ?>" target="_blank" rel="noopener noreferrer">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-facebook.svg')); ?>" alt=""><span>Facebook</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--twitter">
-                        <a href="#">
-                            <img src="<?php echo get_theme_file_uri('/images/icons/icon-share-twitter.svg') ?>" alt="Twitter"><span>Twitter</span>
+                        <a href="<?php echo esc_url('https://twitter.com/share?url=' . $share_url . '&text=' . $share_title); ?>" target="_blank" rel="noopener noreferrer">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-twitter.svg')); ?>" alt=""><span>Twitter</span>
+                        </a>
+                    </li>
+                    <li class="sns__item sns__item--line">
+                        <a href="<?php echo esc_url('https://social-plugins.line.me/lineit/share?url=' . $share_url); ?>" target="_blank" rel="noopener noreferrer">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-line.svg')); ?>" alt=""><span>LINE</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--hatena">
                         <a href="#">
-                            <img src="<?php echo get_theme_file_uri('/images/icons/icon-share-hatena.svg') ?>" alt="Hatena"><span>Hatena</span>
-                        </a>
-                    </li>
-                    <li class="sns__item sns__item--line">
-                        <a href="#">
-                            <img src="<?php echo get_theme_file_uri('/images/icons/icon-share-line.svg') ?>" alt="LINE"><span>LINE</span>
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-hatena.svg')) ?>" alt="Hatena"><span>Hatena</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--pocket">
                         <a href="#">
-                            <img src="<?php echo get_theme_file_uri('/images/icons/icon-share-pocket.svg') ?>" alt="Pocket"><span>Pocket</span>
+                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-pocket.svg')) ?>" alt="Pocket"><span>Pocket</span>
                         </a>
                     </li>
                 </ul>
@@ -87,7 +91,7 @@
                     if (!empty($prev_post)) :
                         $prev_url = get_permalink($prev_post->ID);
                         $prev_title = get_the_title($prev_post->ID);
-                        $prev_img = get_the_post_thumbnail($prev_post->ID, 'thumbnail') ?: '<img src="' . get_theme_file_uri('/images/photo/post__nav.jpg') . '" alt="">';
+                        $prev_img = get_the_post_thumbnail($prev_post->ID, 'thumbnail') ?: '<img src="' . esc_url(get_theme_file_uri('/images/photo/post__nav.jpg')) . '" alt="デフォルトのサムネイル">';
                     ?>
                         <a href="<?php echo esc_url($prev_url); ?>">
                             <span class="post__nav-label post__nav-label--prev"><span aria-hidden="true">◀︎</span>前の記事</span>
@@ -102,7 +106,7 @@
                     if (!empty($next_post)):
                         $next_url = get_permalink($next_post->ID);
                         $next_title = get_the_title($next_post->ID);
-                        $next_img = get_the_post_thumbnail($next_post->ID, 'thumbnail') ?: '<img src="' . get_theme_file_uri('/images/photo/post__nav.jpg') . '" alt="">';
+                        $next_img = get_the_post_thumbnail($next_post->ID, 'thumbnail') ?: '<img src="' . esc_url(get_theme_file_uri('/images/photo/post__nav.jpg')) . '" alt="デフォルトのサムネイル">';
                     ?>
                         <a href="<?php echo esc_url($next_url) ?>">
                             <span class="post__nav-label post__nav-label--next">次の記事<span aria-hidden="true">▶︎</span></span>
@@ -149,7 +153,10 @@
                                                 <?php endif; ?>
                                                 <span class="img__heading">
                                                     <?php $cat = get_the_category();
-                                                    echo esc_html($cat[0]->name); ?>
+                                                    if (! empty($cat)) {
+                                                        echo esc_html($cat[0]->name);
+                                                    }
+                                                    ?>
                                                 </span>
                                             </div>
                                             <div class="related-posts__text">
