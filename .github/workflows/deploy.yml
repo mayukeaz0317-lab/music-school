@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # ⚠️ 以下の「server-dir」を、コノハ内のあなたのテーマフォルダのパスに書き換えてください！
-          server-dir: /public_html/keitahiramatsu.tech/wp-content/themes/上級のコピー/
+          server-dir: /public_html/keitahiramatsu.tech/music-school/wp-content/themes/上級のコピー/
           # 不要なファイルをサーバーに上げないための設定
           exclude: |
             **/.git*
