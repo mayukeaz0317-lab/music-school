@@ -1,0 +1,108 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+
+
+    .p-search {
+        padding-top: 66px;
+        padding-bottom: 70px;
+
+        @include mq($tab) {
+            padding-top: 36px;
+            padding-bottom: 59px;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 42px;
+        }
+
+        &__heading {
+            font-size: 18px;
+            line-height: 30px;
+
+            span {
+                font-weight: 500;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+
+            @include mq($sp) {
+                gap: 39px;
+            }
+        }
+
+        &__item a {
+            display: flex;
+            gap: 50px;
+
+            @include mq($sp) {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        &__img {
+            width: calc(260 / 880 * 100%);
+            aspect-ratio: 260 / 184;
+            position: relative;
+            flex-shrink: 0;
+
+            @include mq($tab) {
+                aspect-ratio: 335 / 200;
+            }
+
+            @include mq($sp) {
+                width: 100%;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .img__heading {
+            width: 80px;
+
+            @include mq($sp) {
+                width: 90px;
+            }
+        }
+
+        &__title {
+            font-size: 20px;
+            line-height: 25px;
+
+            @include mq($sp) {
+                line-height: 30px;
+            }
+        }
+
+        &__time {
+            display: block;
+            font-size: 17px;
+            line-height: 30px;
+            margin-top: 3px;
+            margin-bottom: 11px;
+
+            @include mq($sp) {
+                margin-top: 6px;
+                margin-bottom: 8px;
+                text-align: end;
+            }
+        }
+
+        &__desc {
+            @include mq($sp) {
+                overflow: hidden;
+                max-height: 150px;
+                -webkit-line-clamp: unset;
+            }
+        }
+    }

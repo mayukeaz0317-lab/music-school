@@ -1,0 +1,214 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+
+.contact {
+    padding-top: 68px;
+    padding-bottom: 100px;
+
+    @include mq($tab) {
+        padding-top: 47px;
+        padding-bottom: 108px;
+    }
+}
+
+.contact-form {
+    &__text {
+        text-align: center;
+        margin-bottom: 65px;
+        padding: 0 50px;
+
+        @include mq($tab) {
+            text-align: start;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        gap: 29px;
+        margin-bottom: 30px;
+
+        @include mq($tab) {
+            flex-direction: column;
+            gap: 2px;
+            margin-bottom: 13px;
+        }
+
+        &--purpose {
+            margin-bottom: 26px;
+
+            @include mq($tab) {
+                margin-bottom: 4px;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__label {
+        width: 140px;
+        font-size: 20px;
+        line-height: 33px;
+        font-weight: 500;
+        padding-top: 7px;
+
+        @include mq($tab) {
+            width: auto;
+            font-size: 16px;
+            padding-top: 0;
+        }
+
+        &--message {
+            letter-spacing: 20px;
+
+            @include mq($tab) {
+                letter-spacing: 16px;
+            }
+        }
+    }
+
+    &__checkbox-list {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+
+        @include mq($tab) {
+            gap: 10px;
+        }
+
+        label {
+            display: flex;
+            gap: 20px;
+            justify-content: start;
+
+            @include mq($tab) {
+                gap: 10px;
+            }
+        }
+    }
+
+    &__input {
+        flex: 1;
+        line-height: 33px;
+        text-overflow: clip;
+    }
+
+    input:not([type="submit"]),
+    textarea {
+        display: block;
+        border: 1px solid black;
+        width: 100%;
+    }
+
+    input:not([type="submit"]) {
+        height: 40px;
+        line-height: 33px;
+        padding-top: 6px;
+        padding-left: 19px;
+    }
+
+    input[type="checkbox"] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 0;
+        position: relative;
+        cursor: pointer;
+
+        // チェックが入った時の状態
+        &:checked {
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 7px;
+                top: 4px;
+                width: 5px;
+                height: 10px;
+                border: solid #000;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    textarea {
+        height: 300px;
+        padding-top: 13px;
+        padding-left: 20px;
+
+        @include mq($tab) {
+            height: 190px;
+            line-height: 25px;
+            padding-top: 12px;
+        }
+
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #B2B2B2;
+        font-size: 15px;
+    }
+
+
+    &__submit {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        
+
+        .wpcf7-spinner {
+            position: absolute;
+            margin: 0; 
+        }
+    }
+
+}
+
+.fieldset-wrapper {
+    display: flex;
+    gap: 29px;
+
+    @include mq($tab) {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+fieldset .contact-form__label {
+    line-height: 30px;
+    padding-top: 0;
+
+    @include mq($tab) {
+        line-height: 33px;
+    }
+
+    span {
+        letter-spacing: 20px;
+
+        @include mq($tab) {
+            letter-spacing: 16px;
+        }
+    }
+}
+
+.checkbox-text {
+    font-size: 18px;
+    line-height: 30px;
+    transform: translateY(-5.5px);
+
+    @include mq($tab) {
+        font-size: 16px;
+        transform: translateY(-2px);
+
+    }
+}

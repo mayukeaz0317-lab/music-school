@@ -1,0 +1,18 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+.error{
+    text-align: center;
+    padding-top: 68px;
+    padding-bottom: 90px;
+    @include mq($tab) {
+        text-align: start;
+        padding-top: 47px;
+        padding-bottom: 50px;
+    }
+    &__text{
+        margin-bottom: 40px;
+        @include mq($tab) {
+            margin-bottom: 9px;
+        }
+    }
+}

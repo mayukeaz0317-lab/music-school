@@ -1,0 +1,146 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    @include mq($tab){
+        padding-top: 9.89px;
+        padding-bottom: 8.82px;
+    }
+}
+.header__logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include mq($tab){
+        gap: 6.32px;
+    }
+}
+.logo__img{
+    transform: translateY(-2px);
+}
+.logo__text {
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    line-height: 23px;
+    @include mq($tab){
+        flex-direction: row;
+        line-height: 14px;
+    }
+}
+
+.logo__text--main {
+    font-size: 20px;
+    @include mq($tab){
+        font-size: 13px;
+    }
+}
+
+.logo__text--sub {
+    font-size: 15px;
+    transform: translateY(2px);
+    @include mq($tab){
+        font-size: 13px;
+        transform: translateY(0);
+    }
+}
+.header__nav-list{
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    transform: translateY(1px);
+    @include mq($tab){
+        position: fixed;
+        top: 50px;
+        right: -100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        font-size: 18px;
+        background-color: rgba(203, 0, 0, 1);
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        width: 300px;
+        transition: 0.3s;
+        z-index: 100;
+        &.open{
+            right: 0;
+        }
+
+    }
+}
+.header__btn{
+    width: 150px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    transform: translateY(-1.5px);
+    @include mq($tab){
+        display: none;
+    }
+}
+.hamburger {
+    display: none;
+
+    @include mq($tab) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        width: 71px;
+        height: 50px;
+        z-index: 10;
+        background-color: rgba(203, 0, 0, 1);
+
+        span {
+            transition: all .3s;
+            position: absolute;
+            height: 4px;
+            background-color: white;
+            width: 33px;
+            z-index: 10;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:nth-child(1) {
+                top: 11px;
+            }
+
+            &:nth-child(2) {
+                top: 23px;
+            }
+
+            &:nth-child(3) {
+                bottom: 11px;
+            }
+        }
+        &.open {
+        span {
+            &:nth-child(1) {
+                top: 50%;
+                transform: translateX(-50%) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0; 
+            }
+            &:nth-child(3) {
+                top: 50%;
+                transform: translateX(-50%) rotate(-45deg);
+            }
+        }
+    }
+
+    }
+
+}

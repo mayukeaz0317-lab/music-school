@@ -1,0 +1,222 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+
+.result-details {
+    padding-top: 70px;
+    padding-bottom: 60px;
+    @include mq($tab) {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    &__thumbnail {
+        width: 100%;
+        aspect-ratio: 11 / 5;
+        position: relative;
+
+        @include mq($tab) {
+            aspect-ratio: 335 / 236;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img__heading {
+            width: 100px;
+        }
+    }
+
+    &__title {
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: bold;
+        margin-top: 50px;
+        margin-bottom: 15px;
+
+        @include mq($tab) {
+            font-size: 20px;
+            line-height: 30px;
+            margin-top: 30px;
+            margin-bottom: 6px;
+        }
+    }
+
+    &__time {
+        display: block;
+        font-size: 17px;
+        line-height: 30px;
+        font-weight: normal;
+    }
+
+    &__content {
+        display: flex;
+        gap: 40px;
+        margin-top: 57px;
+        margin-bottom: 60px;
+
+        @include mq($tab) {
+            flex-direction: column;
+            gap: 28px;
+            margin-top: 21px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__table {
+        border-collapse: collapse;
+        box-sizing: border-box;
+        width: 400px;
+        flex-shrink: 0;
+
+        @include mq($tab) {
+            width: 100%;
+        }
+    }
+
+    th,
+    td {
+        box-sizing: border-box;
+        border: 1px solid #707070;
+        font-size: 18px;
+        line-height: 30px;
+        padding-left: 20px;
+        padding-top: 7px;
+
+        @include mq($tab) {
+            padding-left: 10px;
+        }
+    }
+
+    th {
+        background-color: #E5E5E5;
+        width: 140px;
+        font-weight: bold;
+        @include mq($tab) {
+            width: 120px;
+        }
+    }
+
+    td {
+        font-weight: normal;
+    }
+
+    &__desc {
+        @include mq($tab) {
+            font-size: 18px;
+        }
+    }
+
+    .post__nav {
+        gap: 199px;
+        @include mq($tab) {
+            gap: 22px;
+        }
+
+        &-info {
+            margin-bottom: 100px;
+            @include mq($tab) {
+                margin-bottom: 63px;
+            }
+        }
+
+        span {
+            display: block;
+        }
+
+        a:nth-child(2) {
+            span {
+                text-align: end;
+            }
+        }
+    }
+    &__related{
+        padding-bottom: 157px;
+        @include mq($tab) {
+            padding-bottom: 197px;
+        }
+    }
+}
+
+.result-related {
+    &__heading {
+        background-color: black;
+        color: white;
+        font-size: 18px;
+        line-height: 33px;
+        padding-left: 30px;
+        padding-top: 9px;
+        padding-bottom: 8px;
+        margin-bottom: 30px;
+        @include mq($tab) {
+            text-align: center;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        @include mq($tab) {
+            gap: 20px;
+        }
+    }
+
+    &__item a {
+        display: flex;
+        gap: 30px;
+        @include mq($tab) {
+            gap: 20px;
+        }
+    }
+
+    &__img {
+        width: calc(260px / 880px * 100%);
+        aspect-ratio: 260 / 183;
+        flex-shrink: 0;
+        position: relative;
+        @include mq($tab) {
+            width: calc(160px / 335px * 100%);
+            aspect-ratio: 160 / 113;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img__heading {
+            width: 100px;
+
+            @include mq($tab) {
+                width: 80px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 13px;
+        @include mq($tab) {
+            font-size: 17px;
+            line-height: 28px;
+            margin-bottom: 3.93px;
+        }
+    }
+
+    &__time {
+        display: block;
+        font-size: 17px;
+        line-height: 30px;
+        padding-left: 4px;
+        @include mq($tab) {
+            padding-left: 0;
+        }
+    }
+}

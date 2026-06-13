@@ -1,0 +1,53 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+
+.result-list {
+    padding-top: 65px;
+    padding-bottom: 71px;
+
+    &__list {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        row-gap: 61px;
+        column-gap: 106px;
+        @include mq($tab) {
+            column-gap: 50px;
+        }
+        @include mq($sp) {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+
+    &__item a {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 387 / 273;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__desc {
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__time {
+        display: block;
+        text-align: end;
+        font-size: 18px;
+        line-height: 32px;
+    }
+}

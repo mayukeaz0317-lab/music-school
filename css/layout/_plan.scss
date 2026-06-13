@@ -1,0 +1,231 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+
+.price-struct {
+    padding-top: 67px;
+
+    @include mq($tab) {
+        padding-top: 46px;
+    }
+}
+
+.price-struct__formula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 48px;
+
+    @include mq($sp) {
+        flex-direction: column;
+        gap: 19px;
+        margin-bottom: 47px;
+    }
+}
+
+.price-struct__plus {
+    width: 18.5px;
+    height: 18.5px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include mq($sp) {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+.pricing-plan {
+    padding-top: 57px;
+    padding-bottom: 223px;
+
+    @include mq($tab) {
+        padding-top: 38px;
+        padding-bottom: 186px;
+    }
+}
+
+.pricing-table {
+    width: 880px;
+    border-bottom: 0.5px solid black;
+
+    @include mq($tab) {
+        width: 674.5px;
+        margin-bottom: 17.5px;
+    }
+
+
+    tbody {
+        tr:nth-child(even) {
+            background-color: rgba(80, 80, 80, 0.149);
+        }
+
+
+        td {
+            border-left: 0.5px solid black;
+        }
+    }
+
+    &__line {
+        display: inline-block;
+        vertical-align: middle;
+        height: 0.5px;
+        width: 30px;
+        background-color: black;
+    }
+
+    &__note {
+        font-size: 17px;
+        line-height: 25px;
+        margin-top: 28px;
+
+        @include mq($tab) {
+            font-size: 16px;
+            line-height: 30px;
+            margin-top: 17px;
+        }
+    }
+
+    &__wrapper {
+        overflow-x: auto;
+        pointer-events: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            height: 23px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgba(80, 80, 80, 0.149);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #707070;
+            border-radius: 0;
+        }
+    }
+}
+
+.pricing-table__label {
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 500;
+    padding-top: 32px;
+    padding-bottom: 28px;
+    padding-left: 20px;
+
+    @include mq($tab) {
+        font-size: 16px;
+
+        &--community {
+            padding-top: 19px;
+            padding-bottom: 16px;
+        }
+    }
+
+    &--sub {
+        font-size: 17px;
+        line-height: 33px;
+        display: block;
+        padding-left: 0;
+    }
+
+    &--plan {
+        text-align: center;
+        vertical-align: bottom;
+        width: 220px;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+        color: white;
+        background-color: black;
+        padding-top: 11px;
+        padding-bottom: 9px;
+        padding-left: 0;
+        position: relative;
+
+        @include mq($tab) {
+            line-height: 25px;
+            width: 169px;
+            padding-top: 6px;
+            padding-bottom: 8px;
+        }
+
+    }
+
+    &--price {
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 30px;
+        padding-top: 30px;
+        padding-bottom: 25px;
+        border-top: 0.5px solid black;
+
+        @include mq($tab) {
+            font-size: 16px;
+        }
+    }
+}
+
+.pricing-table__data {
+    text-align: center;
+    font-size: 17px;
+    line-height: 25px;
+
+    .circle {
+        display: block;
+        font-size: 15px;
+        line-height: 1.0;
+
+        &--only {
+            padding: 35px 0;
+        }
+    }
+
+    &--inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding-top: 22px;
+        padding-bottom: 15px;
+    }
+
+    &--price {
+        font-size: 22px;
+        line-height: 33px;
+        padding-top: 29px;
+        padding-bottom: 23px;
+    }
+}
+
+.is-popular {
+    &--label {
+        background-color: #CB0000;
+    }
+
+    &--data {
+        color: #CB0000;
+    }
+}
+
+.nothing-inner {
+    padding: 28px 0;
+}
+
+.pricing-table__label--plan:not(.is-popular--label) {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background-color: white;
+        z-index: 1;
+    }
+}
