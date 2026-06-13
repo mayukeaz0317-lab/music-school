@@ -1,50 +1,65 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
-footer{
+
+.footer {
     background-color: rgba(203, 0, 0, 1);
     text-align: center;
-}
-.footer__wrapper{
-    padding-top: 44px;
-    padding-bottom: 48.58px;
-    @include mq($tab){
-        padding-bottom: 50.67px;
+
+    // フッター全体のラッパー
+    &__wrapper {
+        padding-top: 44px;
+        padding-bottom: 48.58px;
+
+        @include mq($tab) {
+            padding-bottom: 50.67px;
+        }
+    }
+
+    // ナビゲーションリスト
+    &__nav-list {
+        display: flex;
+        gap: 32.5px;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 33px;
+
+        @include mq($tab) {
+            gap: 29px;
+        }
+    }
+
+    // ロゴ
+    &__logo {
+        margin-top: 21.74px;
+        margin-bottom: 23px;
+
+        @include mq($tab) {
+            margin-top: 18.74px;
+            margin-bottom: 28.91px;
+        }
+    }
+
+    // SNSリスト
+    &__sns-list {
+        display: flex;
+        gap: 12.2px;
+        justify-content: center;
+        align-items: center;
     }
 }
-.footer__nav-list{
-    display: flex;
-    gap: 32.5px;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 33px;
-    @include mq($tab){
-        gap: 29px;
-    }
-}
-.footer__logo{
-    margin-top: 21.74px;
-    margin-bottom: 23px;
-    @include mq($tab){
-        margin-top: 18.74px;
-        margin-bottom: 28.91px;
-    }
-}
-.copyright{
+
+// コピーライト（独立した独立ブロックとして外に配置）
+.copyright {
     color: white;
     font-weight: 500;
-    font-size:18px;
+    font-size: 18px;
     line-height: 33px;
     letter-spacing: 0.25px;
-    @include mq($tab){
+
+    @include mq($tab) {
         line-height: 20px;
         margin-bottom: 16px;
     }
-}
-.footer__sns-list{
-    display: flex;
-    gap: 12.2px;
-    justify-content: center;
-    align-items: center;
 }

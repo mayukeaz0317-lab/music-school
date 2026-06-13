@@ -1,4 +1,4 @@
-    <footer>
+    <footer class="footer">
         <div class="footer__wrapper container">
             <nav class="footer__nav">
                 <ul class="footer__nav-list">

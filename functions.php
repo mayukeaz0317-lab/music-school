@@ -1,5 +1,6 @@
 <?php
-function my_enqueue_scripts() {
+function my_enqueue_scripts()
+{
     // 1. リセットCSS (destyle.css) を登録・読み込み
     wp_enqueue_style(
         'destyle',
@@ -8,12 +9,12 @@ function my_enqueue_scripts() {
         '3.0.2'
     );
 
-    // 2. 自作の style.css を読み込み（destyle の後に読み込むよう第3引数で指定）
+    // 2. 自作の style.css を読み込み（cssフォルダの中身を指定）
     wp_enqueue_style(
-        'my-style', 
-        get_stylesheet_uri(), 
-        array('destyle'), // これにより、destyleの後に必ず読み込まれます
-        filemtime(get_template_directory() . '/style.css') 
+        'my-style',
+        get_theme_file_uri('/css/style.css'), // get_stylesheet_uri() から変更
+        array('destyle'),
+        filemtime(get_theme_file_path('/css/style.css')) // フォルダのパスも変更
     );
 
     // 3. WordPress標準のjQueryを読み込む設定
@@ -21,23 +22,25 @@ function my_enqueue_scripts() {
 
     // 4. 自作のscript.jsを読み込む
     wp_enqueue_script(
-        'my-script', 
-        get_template_directory_uri() . '/js/script.js', 
-        array('jquery'), 
-        filemtime(get_template_directory() . '/js/script.js'), 
-        true 
+        'my-script',
+        get_template_directory_uri() . '/js/script.js',
+        array('jquery'),
+        filemtime(get_template_directory() . '/js/script.js'),
+        true
     );
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
-function my_theme_setup() {
+function my_theme_setup()
+{
     // アイキャッチ画像機能を有効化
     add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
 // 1. my_theme_widgets_init という名前の「サイドバーを作る手順」を定義します
-function my_theme_widgets_init() {
+function my_theme_widgets_init()
+{
 
     // 2. WordPressに新しいサイドバー（ウィジェットエリア）を登録する命令です
     register_sidebar(array(
@@ -67,7 +70,7 @@ function my_theme_widgets_init() {
 add_action('widgets_init', 'my_theme_widgets_init');
 
 // カテゴリー覧のショートコード追加
-add_shortcode('wp_categories', function() {
+add_shortcode('wp_categories', function () {
     return wp_list_categories(array(
         'title_li' => '', // 余計なタイトルを出さない
         'echo'     => false, // すぐに出力せず、文字列として返す
@@ -75,8 +78,10 @@ add_shortcode('wp_categories', function() {
 });
 
 // functions.php の一番下に追加
-function register_custom_post_results() {
-    register_post_type('result', // スラッグ（URL名）
+function register_custom_post_results()
+{
+    register_post_type(
+        'result', // スラッグ（URL名）
         array(
             'labels' => array(
                 'name' => '卒業実績',
@@ -99,16 +104,15 @@ function register_custom_post_results() {
 add_action('init', 'register_custom_post_results');
 
 // スラッグを規則的に表現
-function auto_custom_slug( $data, $postarr ) {
+function auto_custom_slug($data, $postarr)
+{
     // 「卒業実績（result）」かつ「公開または下書き」の時だけ実行
-    if ( $data['post_type'] == 'result' && !in_array($data['post_status'], array('trash', 'auto-draft')) ) {
-        
+    if ($data['post_type'] == 'result' && !in_array($data['post_status'], array('trash', 'auto-draft'))) {
+
         // スラッグを「details-記事ID」の形に強制書き換え
         // $postarr['ID'] はその記事固有の番号なので絶対に重複しない
         $data['post_name'] = 'details-' . $postarr['ID'];
     }
     return $data;
 }
-add_filter( 'wp_insert_post_data', 'auto_custom_slug', 10, 2 );
-
-?>
+add_filter('wp_insert_post_data', 'auto_custom_slug', 10, 2);

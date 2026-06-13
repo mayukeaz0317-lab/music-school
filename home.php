@@ -45,7 +45,7 @@
     </section>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="">
+            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">
