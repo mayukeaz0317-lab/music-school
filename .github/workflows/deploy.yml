@@ -1,0 +1,28 @@
+name: Deploy Theme to ConoHa WING
+
+on:
+  push:
+    branches:
+      - main # mainブランチにプッシュされた時に動く（masterの場合はmasterに変えてね）
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Sync files to ConoHa WING
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # ⚠️ 以下の「server-dir」を、コノハ内のあなたのテーマフォルダのパスに書き換えてください！
+          server-dir: /public_html/keitahiramatsu.tech/wp-content/themes/上級のコピー/
+          # 不要なファイルをサーバーに上げないための設定
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/src/**
