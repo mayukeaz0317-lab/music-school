@@ -6,9 +6,22 @@
     <nav class="breadcrumbs" aria-label="パンくずリスト">
         <div class="container">
             <div class="breadcrumbs__inner">
-                <ul class="breadcrumbs__list">
-                    <li class="breadcrumbs__item"><a href="<?php echo esc_url(home_url('/top/')); ?>">ホーム</a></li>
-                    <li class="breadcrumbs__item" aria-current="page">プラン・料金</li>
+                <ul class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <?php $position = 1; ?>
+
+                    <!-- 1. ホーム -->
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>">
+                            <span itemprop="name">ホーム</span>
+                        </a>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
+
+                    <!-- 2. プラン・料金（現在のページ） -->
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+                        <span itemprop="name">プラン・料金</span>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
                 </ul>
             </div>
         </div>
@@ -18,7 +31,7 @@
             <h2 class="section-title section-title--price-struct">料金体系</h2>
             <div class="price-struct__formula">
                 <p class="btn btn--price-struct">入会金 39,000円</p>
-                <div class="price-struct__plus"><img src="<?php echo get_theme_file_uri('/images/icons/plus.png') ?>" alt=""></div>
+                <div class="price-struct__plus"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/plus.png')) ?>" alt="プラス"></div>
                 <p class="btn btn--price-struct">月額料金</p>
             </div>
             <p class="price-struct__text">
@@ -124,7 +137,7 @@
     </section>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">
