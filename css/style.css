@@ -226,7 +226,7 @@ picture {
 }
 @media screen and (max-width: 768px) {
   .fv--contact {
-    background-image: url(i../mages/photo/contact__fv--sp.jpg);
+    background-image: url(../images/photo/contact__fv--sp.jpg);
   }
 }
 .fv--result-list {
