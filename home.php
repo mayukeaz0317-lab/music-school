@@ -45,7 +45,7 @@
                                 <div class="blog-list__text">
                                     <h3 class="blog-item__text"><?php echo esc_html(get_the_title()); ?></h3>
                                     <time class="blog-item__time" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-                                    <p><?php the_excerpt(); ?></p>
+                                    <?php the_excerpt(); ?>
                                 </div>
                             </a>
                         </li>
