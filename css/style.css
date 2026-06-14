@@ -605,6 +605,9 @@ picture {
   .hamburger span:nth-child(3) {
     bottom: 11px;
   }
+  .hamburger.open {
+    position: fixed;
+  }
   .hamburger.open span:nth-child(1) {
     top: 50%;
     transform: translateX(-50%) rotate(45deg);
