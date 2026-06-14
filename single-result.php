@@ -54,7 +54,7 @@
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('large'); ?>
                             <?php else : ?>
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/result/result-details__thumbnail.jpg')) ?>" alt="デフォルトのアイキャッチ画像">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/result/result-details__thumbnail.webp')) ?>" alt="デフォルトのアイキャッチ画像">
                             <?php endif; ?>
 
                             <span class="img__heading">
@@ -121,7 +121,7 @@
                 if (!empty($prev_post)) :
                     $prev_url = get_permalink($prev_post->ID);
                     $prev_title = get_the_title($prev_post->ID);
-                    $prev_img = get_the_post_thumbnail($prev_post->ID, 'thumbnail') ?: '<img src="' . esc_url(get_theme_file_uri('/images/photo/post__nav.jpg')) . '" alt="">';
+                    $prev_img = get_the_post_thumbnail($prev_post->ID, 'thumbnail') ?: '<img src="' . esc_url(get_theme_file_uri('/images/photo/post__nav.webp')) . '" alt="">';
                 ?>
                     <a href="<?php echo esc_url($prev_url); ?>">
                         <span class="post__nav-label post__nav-label--prev"><span aria-hidden="true">◀︎</span>前の記事</span>
@@ -136,7 +136,7 @@
                 if (!empty($next_post)):
                     $next_url = get_permalink($next_post->ID);
                     $next_title = get_the_title($next_post->ID);
-                    $next_img = get_the_post_thumbnail($next_post->ID, 'thumbnail') ?: '<img src="' . esc_url(get_theme_file_uri('/images/photo/post__nav.jpg')) . '" alt="">';
+                    $next_img = get_the_post_thumbnail($next_post->ID, 'thumbnail') ?: '<img src="' . esc_url(get_theme_file_uri('/images/photo/post__nav.webp')) . '" alt="">';
                 ?>
                     <a href="<?php echo esc_url($next_url) ?>">
                         <span class="post__nav-label post__nav-label--next">次の記事<span aria-hidden="true">▶︎</span></span>
@@ -185,7 +185,7 @@
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('large'); ?>
                                             <?php else : ?>
-                                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.jpg')) ?>" alt="画像がありません">
+                                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.webp')) ?>" alt="画像がありません">
                                             <?php endif; ?>
 
                                             <span class="img__heading">

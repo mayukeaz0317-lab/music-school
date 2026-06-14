@@ -39,7 +39,7 @@
             <ul class="reasons__list">
                 <li class="reasons__item">
                     <picture class="reasons__img">
-                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason01.jpg')) ?>" alt="プロの講師による丁寧なピアノのマンツーマンレッスンの様子">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason01.webp')) ?>" alt="プロの講師による丁寧なピアノのマンツーマンレッスンの様子">
                     </picture>
                     <div class="reasons__text">
                         <h3 class="reasons__title">技術面はプロによるマンツーマン授業！</h3>
@@ -48,7 +48,7 @@
                 </li>
                 <li class="reasons__item">
                     <picture class="reasons__img">
-                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason02.jpg')) ?>" alt="音楽ビジネスや集客方法についてスタッフと笑顔で個別面談・相談をする様子">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason02.webp')) ?>" alt="音楽ビジネスや集客方法についてスタッフと笑顔で個別面談・相談をする様子">
                     </picture>
                     <div class="reasons__text">
                         <h3 class="reasons__title">収益化するためのビジネスサポート！</h3>
@@ -58,7 +58,7 @@
                 </li>
                 <li class="reasons__item">
                     <picture class="reasons__img">
-                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason03.jpg')) ?>" alt="個室の練習ROOMでアコースティックギターを弾きながら楽譜に書き込みをする様子">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason03.webp')) ?>" alt="個室の練習ROOMでアコースティックギターを弾きながら楽譜に書き込みをする様子">
                     </picture>
                     <div class="reasons__text">
                         <h3 class="reasons__title">24時間365日使える練習ROOMを完備！</h3>
@@ -81,7 +81,7 @@
                     <ul class="testimonial__list">
                         <li class="testimonial__item">
                             <div class="testimonial__img">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice01.jpg')) ?>" alt="笑顔でマイクを持って楽しそうに歌う男性の姿">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice01.webp')) ?>" alt="笑顔でマイクを持って楽しそうに歌う男性の姿">
                             </div>
                             <div class="testimonial__text">
                                 <h3 class="testimonial__title">証券会社勤務　丸山さん</h3>
@@ -90,7 +90,7 @@
                         </li>
                         <li class="testimonial__item">
                             <div class="testimonial__img">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice02.jpg')) ?>" alt="ピアノの前に座り可愛い小型犬を抱きしめて微笑む女性の姿">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice02.webp')) ?>" alt="ピアノの前に座り可愛い小型犬を抱きしめて微笑む女性の姿">
                             </div>
                             <div class="testimonial__text">
                                 <h3 class="testimonial__title">IT会社勤務　S.Eさん</h3>
@@ -99,7 +99,7 @@
                         </li>
                         <li class="testimonial__item">
                             <div class="testimonial__img">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice03.jpg')) ?>" alt="アコースティックギターを抱えて真剣な表情で手元を見つめる男性の姿">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice03.webp')) ?>" alt="アコースティックギターを抱えて真剣な表情で手元を見つめる男性の姿">
                             </div>
                             <div class="testimonial__text">
                                 <h3 class="testimonial__title">IT会社勤務　S.Eさん</h3>
@@ -108,7 +108,7 @@
                         </li>
                         <li class="testimonial__item">
                             <div class="testimonial__img">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice02.jpg')) ?>" alt="ピアノの前に座り可愛い小型犬を抱きしめて微笑む女性の姿">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice02.webp')) ?>" alt="ピアノの前に座り可愛い小型犬を抱きしめて微笑む女性の姿">
                             </div>
                             <div class="testimonial__text">
                                 <h3 class="testimonial__title">IT会社勤務　S.Eさん</h3>
@@ -117,7 +117,7 @@
                         </li>
                         <li class="testimonial__item">
                             <div class="testimonial__img">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice03.jpg')) ?>" alt="アコースティックギターを抱えて真剣な表情で手元を見つめる男性の姿">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/voice03.webp')) ?>" alt="アコースティックギターを抱えて真剣な表情で手元を見つめる男性の姿">
                             </div>
                             <div class="testimonial__text">
                                 <h3 class="testimonial__title">IT会社勤務　S.Eさん</h3>
@@ -237,7 +237,7 @@
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium'); ?>
                                     <?php else : ?>
-                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.jpg')); ?>" alt="画像がありません">
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.webp')); ?>" alt="画像がありません">
                                     <?php endif; ?>
                                     <span class="img__heading">
                                         <?php

@@ -59,7 +59,7 @@
     }
 
     &--index {
-        background-image: url(../images/photo/index__fv.jpg);
+        background-image: url(../images/photo/index__fv.webp);
         padding-top: 185px;
         padding-bottom: 165px;
 
@@ -74,7 +74,7 @@
         }
 
         @include mq($tab) {
-            background-image: url(../images/photo/index__fv--sp.jpg);
+            background-image: url(../images/photo/index__fv--sp.webp);
             height: 550px;
 
             h2 {
@@ -86,32 +86,32 @@
 
 
     &--blog-list {
-        background-image: url(../images/photo/blog-list__fv.jpg);
+        background-image: url(../images/photo/blog-list__fv.webp);
 
         @include mq($tab) {
-            background-image: url(../images/photo/blog-list__fv--sp.jpg);
+            background-image: url(../images/photo/blog-list__fv--sp.webp);
         }
     }
 
 
     &--plan {
-        background-image: url(../images/photo/plan__fv.jpg);
+        background-image: url(../images/photo/plan__fv.webp);
 
         @include mq($tab) {
-            background-image: url(../images/photo/plan__fv--sp.jpg);
+            background-image: url(../images/photo/plan__fv--sp.webp);
         }
     }
 
     &--contact {
-        background-image: url(../images/photo/contact__fv.jpg);
+        background-image: url(../images/photo/contact__fv.webp);
 
         @include mq($tab) {
-            background-image: url(../images/photo/contact__fv--sp.jpg);
+            background-image: url(../images/photo/contact__fv--sp.webp);
         }
     }
 
     &--result-list {
-        background-image: url(../images/result/result-list__fv.jpg);
+        background-image: url(../images/result/result-list__fv.webp);
 
         @include mq($tab) {
             background-position: 50%;
@@ -119,10 +119,10 @@
     }
 
     &--error {
-        background-image: url(../images/photo/404__fv.jpg);
+        background-image: url(../images/photo/404__fv.webp);
 
         @include mq($tab) {
-            background-image: url(../images/photo/404__fv--sp.jpg);
+            background-image: url(../images/photo/404__fv--sp.webp);
         }
     }
 }
