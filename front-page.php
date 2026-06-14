@@ -39,7 +39,6 @@
             <ul class="reasons__list">
                 <li class="reasons__item">
                     <picture class="reasons__img">
-                        <source srcset="<?php echo esc_url(get_theme_file_uri('/images/photo/reason01-sp.jpg')) ?>" media="(max-width:768px)">
                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason01.jpg')) ?>" alt="プロの講師による丁寧なピアノのマンツーマンレッスンの様子">
                     </picture>
                     <div class="reasons__text">
@@ -49,7 +48,6 @@
                 </li>
                 <li class="reasons__item">
                     <picture class="reasons__img">
-                        <source srcset="<?php echo esc_url(get_theme_file_uri('/images/photo/reason02-sp.jpg')) ?>" media="(max-width:768px)">
                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason02.jpg')) ?>" alt="音楽ビジネスや集客方法についてスタッフと笑顔で個別面談・相談をする様子">
                     </picture>
                     <div class="reasons__text">
@@ -60,7 +58,6 @@
                 </li>
                 <li class="reasons__item">
                     <picture class="reasons__img">
-                        <source srcset="<?php echo esc_url(get_theme_file_uri('/images/photo/reason03-sp.jpg')) ?>" media="(max-width:768px)">
                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/reason03.jpg')) ?>" alt="個室の練習ROOMでアコースティックギターを弾きながら楽譜に書き込みをする様子">
                     </picture>
                     <div class="reasons__text">
