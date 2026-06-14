@@ -6,10 +6,23 @@
     <nav class="breadcrumbs" aria-label="パンくずリスト">
         <div class="container">
             <div class="breadcrumbs__inner">
-                <ul class="breadcrumbs__list">
-                    <li class="breadcrumbs__item"><a href="<?php echo esc_url(home_url('/top/')); ?>">ホーム</a></li>
-                    <li class="breadcrumbs__item" aria-current="page">卒業実績</li>
-                </ul>
+                <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <?php $position = 1; ?>
+
+                    <!-- 1. ホーム -->
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>">
+                            <span itemprop="name">ホーム</span>
+                        </a>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
+
+                    <!-- 2. 卒業実績-->
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+                        <span itemprop="name"><?php echo esc_html(post_type_archive_title('', false)); ?></span>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
+                </ol> ˝
             </div>
         </div>
     </nav>
@@ -24,18 +37,18 @@
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('full'); ?>
                                     <?php else : ?>
-                                        <img src="<?php echo get_theme_file_uri('/images/blog-list__img01.jpg'); ?>" alt="">
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/blog-list__img01.jpg')); ?>" alt="">
                                     <?php endif; ?>
 
                                     <span class="img__heading img__heading--result-list">
                                         <?php
                                         $terms = get_the_terms(get_the_ID(), 'result_genre');
-                                        if ($terms) echo $terms[0]->name;
+                                        if (!empty($terms)) echo esc_html($terms[0]->name);
                                         ?>
                                     </span>
                                 </div>
                                 <div class="result-list__text">
-                                    <h3 class="result-list__desc"><?php the_title(); ?></h3>
+                                    <h3 class="result-list__desc"><?php esc_html(get_the_title()); ?></h3>
                                     <time class="result-list__time" datetime="<?php the_time('c'); ?>">
                                         <?php the_time('Y.m.d'); ?>
                                     </time>
@@ -56,7 +69,7 @@
     ?>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">
