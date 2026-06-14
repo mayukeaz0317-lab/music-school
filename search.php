@@ -3,44 +3,75 @@
     <nav class="breadcrumbs" aria-label="パンくずリスト">
         <div class="container">
             <div class="breadcrumbs__inner">
-                <ul class="breadcrumbs__list">
-                    <li class="breadcrumbs__item"><a href="<?php echo esc_url(home_url('/top/')); ?>">ホーム</a></li>
-                    <li class="breadcrumbs__item" aria-current="page">検索</li>
+                <ul class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <?php $position = 1; ?>
+
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>">
+                            <span itemprop="name">ホーム</span>
+                        </a>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
+
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+                        <span itemprop="name">
+                            「<?php echo esc_html(get_search_query()); ?>」の検索結果
+                        </span>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <section class="p-search">
+    <section class="search">
         <div class="container">
-            <div class="p-search__header">
-                <h1 class="p-search__heading">「<?php echo get_search_query(); ?>」<span>の検索結果</span></h1>
-                <p class="p-search__count"><?php echo $wp_query->found_posts; ?>件</p>
+            <div class="search__header">
+                <h1 class="search__heading">「<?php echo esc_html(get_search_query()); ?>」<span>の検索結果</span></h1>
+                <p class="search__count"><?php echo esc_html($wp_query->found_posts); ?>件</p>
             </div>
-            <ul class="p-search__list">
+            <ul class="search__list">
                 <?php if (have_posts()): ?>
                     <?php while (have_posts()): the_post(); ?>
-                        <li class="p-search__item">
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="p-search__img">
+                        <li class="search__item">
+                            <a href="<?php echo esc_url(get_the_permalink()); ?>">
+                                <div class="search__img">
                                     <?php if (has_post_thumbnail()): ?>
-                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php the_post_thumbnail('medium'); ?>
                                     <?php else: ?>
-                                        <img src="<?php echo get_theme_file_uri('/images/photo/blog-list__img01.jpg'); ?>" alt="">
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/blog-list__img01.jpg')); ?>" alt="">
                                     <?php endif; ?>
-                                    <span class="img__heading"><?php $cat = get_the_category();
-                                                                echo $cat[0]->name; ?></span>
+                                    <span class="img__heading">
+                                        <?php
+                                        if (get_post_type() === 'result') {
+                                            $terms = get_the_terms(get_the_ID(), 'result_genre');
+                                            if (!empty($terms) && !is_wp_error($terms)) {
+                                                echo esc_html($terms[0]->name);
+                                            }
+                                        } else {
+                                            $cat = get_the_category();
+                                            if (!empty($cat)) {
+                                                echo esc_html($cat[0]->name);
+                                            }
+                                        }
+                                        ?>
+                                    </span>
                                 </div>
-                                <div class="p-search__text">
-                                    <h2 class="p-search__title"><?php the_title(); ?></h2>
-                                    <time datetime="<?php the_time('c') ?>" class="p-search__time"><?php the_time('Y.m.d'); ?></time>
-                                    <p class="p-search__desc"><?php echo get_the_excerpt(); ?></p>
+                                <div class="search__text">
+                                    <h2 class="search__title"><?php echo esc_html(get_the_title()); ?></h2>
+                                    <time datetime="<?php the_time('c') ?>" class="search__time"><?php the_time('Y.m.d'); ?></time>
+                                    <p class="search__desc"><?php echo esc_html(get_the_excerpt()); ?></p>
                                 </div>
                             </a>
                         </li>
                     <?php endwhile; ?>
-
+                <?php else: ?>
+                    <div class="p-search__empty">
+                        <p>ご指定の検索キーワードに一致する記事は見つかりませんでした。</p>
+                        <p>別のキーワードで再度お試しください。</p>
+                    </div>
                 <?php endif; ?>
             </ul>
+        </div>
     </section>
     </div>
     <?php
@@ -53,7 +84,7 @@
     ?>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">
