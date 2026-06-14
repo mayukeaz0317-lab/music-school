@@ -3,7 +3,7 @@
     <nav class="breadcrumbs" aria-label="パンくずリスト">
         <div class="container">
             <div class="breadcrumbs__inner">
-                <ul class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <?php $position = 1; ?>
 
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -19,7 +19,7 @@
                         </span>
                         <meta itemprop="position" content="<?php echo $position++; ?>" />
                     </li>
-                </ul>
+                </ol>
             </div>
         </div>
     </nav>

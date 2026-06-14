@@ -6,7 +6,7 @@
     <nav class="breadcrumbs" aria-label="パンくずリスト">
         <div class="container">
             <div class="breadcrumbs__inner">
-                <ul class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <?php $position = 1; ?>
 
                     <!-- 1. ホーム -->
@@ -22,7 +22,7 @@
                         <span itemprop="name">プラン・料金</span>
                         <meta itemprop="position" content="<?php echo $position++; ?>" />
                     </li>
-                </ul>
+                </ol>
             </div>
         </div>
     </nav>
