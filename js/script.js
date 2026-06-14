@@ -37,7 +37,6 @@ jQuery(function ($) {
     });
     // Contact Form 7 の送信が成功したときの処理
     document.addEventListener('wpcf7mailsent', function (event) {
-        // サンクスページのURLを指定（サイトのドメイン以降のパスを記述）
-        location = '/thanks/';
+        location = window.location.origin + '/music-school/thanks/';
     }, false);
 })
