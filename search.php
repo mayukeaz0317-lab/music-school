@@ -59,7 +59,7 @@
                                 <div class="search__text">
                                     <h2 class="search__title"><?php echo esc_html(get_the_title()); ?></h2>
                                     <time datetime="<?php the_time('c') ?>" class="search__time"><?php the_time('Y.m.d'); ?></time>
-                                    <p class="search__desc"><?php echo esc_html(get_the_excerpt()); ?></p>
+                                    <?php the_excerpt(); ?>
                                 </div>
                             </a>
                         </li>
