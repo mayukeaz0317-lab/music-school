@@ -240,7 +240,7 @@
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium'); ?>
                                     <?php else : ?>
-                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.jpg')); ?>" alt="No Image">
+                                        <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.jpg')); ?>" alt="画像がありません">
                                     <?php endif; ?>
                                     <span class="img__heading">
                                         <?php
