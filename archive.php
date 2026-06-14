@@ -27,14 +27,25 @@
                                         <img src="<?php echo get_theme_file_uri('/images/photo/no-image.jpg'); ?>" alt="">
                                     <?php endif; ?>
                                     <span class="img__heading">
-                                        <?php $cat = get_the_category();
-                                        echo $cat[0]->name; ?>
+                                        <?php if (get_post_type() === 'result') {
+
+                                            $terms = get_the_terms(get_the_ID(), 'result_genre');
+                                            if (!empty($terms)&& !is_wp_error($terms)) {
+                                                echo $terms[0]->name;
+                                            }
+                                        } else {
+
+                                            $cat = get_the_category();
+                                            if (!empty($cat)) {
+                                                echo $cat[0]->name;
+                                            }
+                                        } ?>
                                     </span>
                                 </div>
                                 <div class="blog-list__text">
                                     <h3 class="blog-item__text"><?php the_title(); ?></h3>
                                     <time class="blog-item__time" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-                                    <p><?php echo get_the_excerpt(); ?></p>
+                                    <p><?php the_excerpt(); ?></p>
                                 </div>
                             </a>
                         </li>
@@ -45,7 +56,7 @@
     </section>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">

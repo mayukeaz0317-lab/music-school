@@ -2784,87 +2784,87 @@ fieldset .contact-form__label span {
   }
 }
 
-.p-search {
+.search {
   padding-top: 66px;
   padding-bottom: 70px;
 }
 @media screen and (max-width: 768px) {
-  .p-search {
+  .search {
     padding-top: 36px;
     padding-bottom: 59px;
   }
 }
-.p-search__header {
+.search__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 42px;
 }
-.p-search__heading {
+.search__heading {
   font-size: 18px;
   line-height: 30px;
 }
-.p-search__heading span {
+.search__heading span {
   font-weight: 500;
 }
-.p-search__list {
+.search__list {
   display: flex;
   flex-direction: column;
   gap: 70px;
 }
 @media screen and (max-width: 576px) {
-  .p-search__list {
+  .search__list {
     gap: 39px;
   }
 }
-.p-search__item a {
+.search__item a {
   display: flex;
   gap: 50px;
 }
 @media screen and (max-width: 576px) {
-  .p-search__item a {
+  .search__item a {
     flex-direction: column;
     gap: 30px;
   }
 }
-.p-search__img {
+.search__img {
   width: 29.5454545455%;
   aspect-ratio: 260/184;
   position: relative;
   flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
-  .p-search__img {
+  .search__img {
     aspect-ratio: 335/200;
   }
 }
 @media screen and (max-width: 576px) {
-  .p-search__img {
+  .search__img {
     width: 100%;
   }
 }
-.p-search__img img {
+.search__img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.p-search .img__heading {
+.search .img__heading {
   width: 80px;
 }
 @media screen and (max-width: 576px) {
-  .p-search .img__heading {
+  .search .img__heading {
     width: 90px;
   }
 }
-.p-search__title {
+.search__title {
   font-size: 20px;
   line-height: 25px;
 }
 @media screen and (max-width: 576px) {
-  .p-search__title {
+  .search__title {
     line-height: 30px;
   }
 }
-.p-search__time {
+.search__time {
   display: block;
   font-size: 17px;
   line-height: 30px;
@@ -2872,14 +2872,14 @@ fieldset .contact-form__label span {
   margin-bottom: 11px;
 }
 @media screen and (max-width: 576px) {
-  .p-search__time {
+  .search__time {
     margin-top: 6px;
     margin-bottom: 8px;
     text-align: end;
   }
 }
 @media screen and (max-width: 576px) {
-  .p-search__desc {
+  .search__desc {
     overflow: hidden;
     max-height: 150px;
     -webkit-line-clamp: unset;

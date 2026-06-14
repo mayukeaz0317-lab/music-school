@@ -123,12 +123,9 @@
                         <?php
                         // 今の記事のカテゴリーIDを取得
                         $categories = get_the_category();
-                        if ($categories) :
+                        if (!empty($categories)) :
                             $category_ids = array();
-                            foreach ($categories as $category) {
-                                $category_ids[] = $category->term_id;
-                            }
-
+                            $category_ids = wp_list_pluck($categories, 'term_id');
                             // 同じカテゴリーの記事をクエリ
                             $args = array(
                                 'post_type'      => 'post',
@@ -187,7 +184,7 @@
     </div>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">

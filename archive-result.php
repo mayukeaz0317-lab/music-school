@@ -29,7 +29,7 @@
 
                                     <span class="img__heading img__heading--result-list">
                                         <?php
-                                        $terms = get_the_terms($post->ID, 'result_genre');
+                                        $terms = get_the_terms(get_the_ID(), 'result_genre');
                                         if ($terms) echo $terms[0]->name;
                                         ?>
                                     </span>
@@ -56,7 +56,7 @@
     ?>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">
