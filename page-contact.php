@@ -6,9 +6,22 @@
     <nav class="breadcrumbs" aria-label="パンくずリスト">
         <div class="container">
             <div class="breadcrumbs__inner">
-                <ul class="breadcrumbs__list">
-                    <li class="breadcrumbs__item"><a href="<?php echo esc_url(home_url('/top/')); ?>">ホーム</a></li>
-                    <li class="breadcrumbs__item" aria-current="page">お問い合わせ</li>
+                <ul class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <?php $position = 1; ?>
+
+                    <!-- 1. ホーム -->
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="<?php echo esc_url(home_url('/')); ?>">
+                            <span itemprop="name">ホーム</span>
+                        </a>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
+
+                    <!-- 2. お問い合わせ（現在のページ） -->
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+                        <span itemprop="name">お問い合わせ</span>
+                        <meta itemprop="position" content="<?php echo $position++; ?>" />
+                    </li>
                 </ul>
             </div>
         </div>
@@ -22,7 +35,7 @@
     </section>
     <div class="back-to-top back-to-top--contact">
         <a href="#header">
-            <img src="<?php echo get_theme_file_uri('/images/icons/back-to-top.svg') ?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
 </main>
