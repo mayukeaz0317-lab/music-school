@@ -115,3 +115,6 @@ function auto_custom_slug($data, $postarr)
     return $data;
 }
 add_filter('wp_insert_post_data', 'auto_custom_slug', 10, 2);
+
+// Contact Form 7 の自動整形（勝手にpタグやbrタグが入る機能）を停止する
+add_filter('wpcf7_autop_or_not', '__return_false');
