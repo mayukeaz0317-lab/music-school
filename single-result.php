@@ -180,7 +180,7 @@
                             while ($related_query->have_posts()) : $related_query->the_post();
                     ?>
                                 <li class="result-related__item">
-                                    <a href="<?php echo esc_url(get_the_permalink()); ?>">
+                                    <a href="<?php the_permalink(); ?>">
                                         <div class="result-related__img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('large'); ?>

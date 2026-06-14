@@ -33,7 +33,7 @@
                 <?php if (have_posts()): ?>
                     <?php while (have_posts()): the_post(); ?>
                         <li class="search__item">
-                            <a href="<?php echo esc_url(get_the_permalink()); ?>">
+                            <a href="<?php the_permalink(); ?>">
                                 <div class="search__img">
                                     <?php if (has_post_thumbnail()): ?>
                                         <?php the_post_thumbnail('medium'); ?>
