@@ -4,7 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="きたむらミュージックスクールは、プロによるマンツーマン授業と24時間365日使える練習ROOMを完備！初心者から経験者まで、技術面だけでなく音楽で副収入を得るためのビジネス・集客方法まで徹底サポートします。">
     <link rel="icon" type="image/png" href="<?php echo esc_url(get_theme_file_uri('/images/favicon/favicon-96x96.png')); ?>" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="<?php echo esc_url(get_theme_file_uri('/images/favicon/favicon.svg')); ?>" />
     <link rel="shortcut icon" href="<?php echo esc_url(get_theme_file_uri('/images/favicon/favicon.ico')); ?>" />
