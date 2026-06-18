@@ -22,7 +22,7 @@
                         <span itemprop="name"><?php echo esc_html(post_type_archive_title('', false)); ?></span>
                         <meta itemprop="position" content="<?php echo $position++; ?>" />
                     </li>
-                </ol> ˝
+                </ol>
             </div>
         </div>
     </nav>
@@ -32,7 +32,7 @@
             <ul class="result-list__list">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <li class="result-list__item">
-                            <a href="<?php the_permalink(); ?>">
+                            <a href="<?php the_permalink(); ?>" class="result-list__link">
                                 <div class="result-list__img">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('full'); ?>
@@ -40,15 +40,15 @@
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/blog-list__img01.webp')); ?>" alt="">
                                     <?php endif; ?>
 
-                                    <span class="img__heading img__heading--result-list">
+                                    <span class="img-heading img__heading--result-list">
                                         <?php
                                         $terms = get_the_terms(get_the_ID(), 'result_genre');
                                         if (!empty($terms)) echo esc_html($terms[0]->name);
                                         ?>
                                     </span>
                                 </div>
-                                <div class="result-list__text">
-                                    <h3 class="result-list__desc"><?php esc_html(get_the_title()); ?></h3>
+                                <div class="result-list__content">
+                                    <h3 class="result-list__title"><?php echo esc_html(get_the_title()); ?></h3>
                                     <time class="result-list__time" datetime="<?php the_time('c'); ?>">
                                         <?php the_time('Y.m.d'); ?>
                                     </time>
