@@ -37,7 +37,7 @@
                                     <?php else : ?>
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.webp')); ?>" alt="画像がありません">
                                     <?php endif; ?>
-                                    <span class="img__heading">
+                                    <span class="img-label">
                                         <?php $cat = get_the_category();
                                         if (!empty($cat)) echo esc_html($cat[0]->name); ?>
                                     </span>

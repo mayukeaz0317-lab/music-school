@@ -44,7 +44,7 @@
                     <?php if (has_post_thumbnail()): ?>
                         <?php the_post_thumbnail('large'); ?>
                     <?php endif; ?>
-                    <span class="img__heading">
+                    <span class="img-label">
                         <?php $cat = get_the_category();
                         if (!empty($cat)) echo esc_html($cat[0]->name); ?>
                     </span>
@@ -148,7 +148,7 @@
                                                 <?php else : ?>
                                                     <img src="<?php echo get_theme_file_uri('/images/photo/blog-list__img01.webp') ?>" alt="">
                                                 <?php endif; ?>
-                                                <span class="img__heading">
+                                                <span class="img-label">
                                                     <?php $cat = get_the_category();
                                                     if (! empty($cat)) {
                                                         echo esc_html($cat[0]->name);

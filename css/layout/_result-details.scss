@@ -18,13 +18,7 @@
             aspect-ratio: 335 / 236;
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .img__heading {
+        .img-label {
             width: 100px;
         }
     }
@@ -184,13 +178,7 @@
             aspect-ratio: 160 / 113;
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .img__heading {
+        .img-label {
             width: 100px;
 
             @include mq($tab) {

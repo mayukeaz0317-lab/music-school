@@ -37,7 +37,7 @@
                                     <?php else : ?>
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.webp')); ?>" alt="画像がありません">
                                     <?php endif; ?>
-                                    <span class="img__heading">
+                                    <span class="img-label">
                                         <?php if (get_post_type() === 'result') {
 
                                             $terms = get_the_terms(get_the_ID(), 'result_genre');

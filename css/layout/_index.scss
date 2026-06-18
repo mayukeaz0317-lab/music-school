@@ -38,11 +38,6 @@
         height: auto;
         margin-bottom: 20px;
 
-        img {
-            width: 100%;
-            height: 100%;
-        }
-
         @include mq($tab) {
             margin-bottom: 32px;
         }
@@ -190,11 +185,6 @@
             aspect-ratio: 67 / 40;
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 
     &__title {
@@ -294,12 +284,6 @@
 
         @include mq($tab) {
             aspect-ratio: 67 / 40;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     }
 
@@ -638,11 +622,6 @@
             aspect-ratio: 67 / 40;
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 
     &__title {
@@ -665,7 +644,7 @@
         line-height: 30px;
     }
 
-    .img__heading {
+    .img-label {
         width: 80px;
 
         @include mq($tab) {

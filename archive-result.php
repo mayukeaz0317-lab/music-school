@@ -40,7 +40,7 @@
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/blog-list__img01.webp')); ?>" alt="">
                                     <?php endif; ?>
 
-                                    <span class="img-heading img__heading--result-list">
+                                    <span class="img-label">
                                         <?php
                                         $terms = get_the_terms(get_the_ID(), 'result_genre');
                                         if (!empty($terms)) echo esc_html($terms[0]->name);

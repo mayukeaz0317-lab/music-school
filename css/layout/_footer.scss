@@ -34,6 +34,8 @@
     &__logo {
         margin-top: 21.74px;
         margin-bottom: 23px;
+        width: 32px;
+        margin: 0 auto;
 
         @include mq($tab) {
             margin-top: 18.74px;

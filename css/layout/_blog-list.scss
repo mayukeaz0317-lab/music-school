@@ -64,14 +64,8 @@
     flex-shrink: 0;
     width: calc(260 / 880 * 100%);
     aspect-ratio: 260 / 184;
-    
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
-    .img__heading {
+    .img-label {
         width: 80px;
 
         @include mq($tab) {

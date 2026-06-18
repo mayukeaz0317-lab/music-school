@@ -34,20 +34,14 @@ aside {
     aspect-ratio: 60 / 35;
     position: relative;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .img__heading {
+    .img-label {
         width: 80px;
     }
 
     @include mq($tab) {
         aspect-ratio: 335 / 200;
 
-        .img__heading {
+        .img-label {
             width: 90px;
         }
     }
@@ -301,13 +295,6 @@ aside {
         margin-top: 17px;
         margin-bottom: 28px;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
         @include mq($tab) {
             margin-top: 39px;
             margin-bottom: 27px;
@@ -389,12 +376,6 @@ aside {
     flex-shrink: 0;
     flex-grow: 0;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
     @include mq($tab) {
         display: none;
     }
@@ -444,13 +425,8 @@ aside {
     height: 140px;
     flex-shrink: 0;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
-    .img__heading {
+    .img-label {
         width: 80px;
     }
 
@@ -553,12 +529,6 @@ aside {
     @include mq($tab) {
         height: 228px;
     }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 }
 
 
@@ -636,11 +606,6 @@ aside {
     height: 75px;
     flex-shrink: 0;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     @include mq($tab) {
         width: 160px;
