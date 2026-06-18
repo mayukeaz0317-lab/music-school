@@ -250,7 +250,7 @@
                                         ?>
                                     </span>
                                 </div>
-                                <h3 class="index-blog__title"><?php esc_html(get_the_title()); ?></h3>
+                                <h3 class="index-blog__title"><?php echo esc_html(get_the_title()); ?></h3>
                                 <time class="index-blog__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
                             </a>
                         </li>
