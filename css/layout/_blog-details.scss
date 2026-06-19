@@ -215,6 +215,10 @@
         display: flex;
         gap: 78px;
 
+        @include mq($tab) {
+            gap: 22px;
+        }
+
         a {
             flex: 1;
         }
