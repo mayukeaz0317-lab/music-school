@@ -1603,22 +1603,22 @@ img {
   }
 }
 
-.blog-details__wrapper {
+.blog-details {
   padding-top: 70px;
   padding-bottom: 187px;
 }
 @media screen and (max-width: 768px) {
-  .blog-details__wrapper {
+  .blog-details {
     padding-top: 50px;
     padding-bottom: 197px;
   }
 }
-.blog-details--flex {
+.blog-details__wrap {
   display: flex;
   gap: 31px;
 }
 @media screen and (max-width: 768px) {
-  .blog-details--flex {
+  .blog-details__wrap {
     flex-direction: column;
     gap: 30.1px;
   }
@@ -1894,17 +1894,17 @@ img {
 .blog-details__sns-list .sns__item a {
   height: 40px;
 }
-@media screen and (max-width: 768px) {
-  .blog-details__sns-list .sns__item a {
-    width: 65px;
-  }
-}
 .blog-details__sns-list .sns__item--facebook {
   background-color: #425893;
 }
 .blog-details__sns-list .sns__item--facebook a {
   width: 105px;
   gap: 13.5px;
+}
+@media screen and (max-width: 768px) {
+  .blog-details__sns-list .sns__item--facebook a {
+    width: auto;
+  }
 }
 .blog-details__sns-list .sns__item--twitter {
   background-color: #4A9FEB;
@@ -1913,6 +1913,11 @@ img {
   width: 88px;
   gap: 10px;
 }
+@media screen and (max-width: 768px) {
+  .blog-details__sns-list .sns__item--twitter a {
+    width: auto;
+  }
+}
 .blog-details__sns-list .sns__item--hatena {
   background-color: #4A9FEB;
 }
@@ -1920,12 +1925,22 @@ img {
   width: 93px;
   gap: 11px;
 }
+@media screen and (max-width: 768px) {
+  .blog-details__sns-list .sns__item--hatena a {
+    width: auto;
+  }
+}
 .blog-details__sns-list .sns__item--line {
   background-color: #52B534;
 }
 .blog-details__sns-list .sns__item--line a {
   width: 81px;
   gap: 8.4px;
+}
+@media screen and (max-width: 768px) {
+  .blog-details__sns-list .sns__item--line a {
+    width: auto;
+  }
 }
 .blog-details__sns-list .sns__item--pocket {
   background-color: #DC4F5A;
@@ -1935,8 +1950,15 @@ img {
   gap: 9.24px;
 }
 @media screen and (max-width: 768px) {
+  .blog-details__sns-list .sns__item--pocket a {
+    width: auto;
+  }
+}
+@media screen and (max-width: 768px) {
   .blog-details__sns-list {
     margin-bottom: 27px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
   .blog-details__sns-list span {
     display: none;

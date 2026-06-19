@@ -2,17 +2,17 @@
 @use "../foundation/variables" as *;
 
 .blog-details {
-    &__wrapper {
-        padding-top: 70px;
-        padding-bottom: 187px;
 
-        @include mq($tab) {
-            padding-top: 50px;
-            padding-bottom: 197px;
-        }
+    padding-top: 70px;
+    padding-bottom: 187px;
+
+    @include mq($tab) {
+        padding-top: 50px;
+        padding-bottom: 197px;
     }
 
-    &--flex {
+
+    &__wrap {
         display: flex;
         gap: 31px;
 
@@ -313,9 +313,6 @@
 
             height: 40px;
 
-            @include mq($tab) {
-                width: 65px;
-            }
         }
 
         &--facebook {
@@ -324,6 +321,10 @@
             a {
                 width: 105px;
                 gap: 13.5px;
+
+                @include mq($tab) {
+                    width: auto;
+                }
             }
         }
 
@@ -334,6 +335,10 @@
             a {
                 width: 88px;
                 gap: 10px;
+
+                @include mq($tab) {
+                    width: auto;
+                }
             }
         }
 
@@ -344,6 +349,10 @@
             a {
                 width: 93px;
                 gap: 11px;
+
+                @include mq($tab) {
+                    width: auto;
+                }
             }
 
 
@@ -356,6 +365,10 @@
             a {
                 width: 81px;
                 gap: 8.4px;
+
+                @include mq($tab) {
+                    width: auto;
+                }
             }
 
         }
@@ -367,6 +380,10 @@
             a {
                 width: 91px;
                 gap: 9.24px;
+
+                @include mq($tab) {
+                    width: auto;
+                }
             }
 
 
@@ -375,6 +392,8 @@
 
     @include mq($tab) {
         margin-bottom: 27px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
         span {
             display: none;

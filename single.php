@@ -37,8 +37,8 @@
             </div>
         </div>
     </nav>
-    <div class="blog-details__wrapper">
-        <div class="container blog-details--flex">
+    <div class="blog-details">
+        <div class="container blog-details__wrap">
             <article class="post">
                 <div class="post__thumbnail">
                     <?php if (has_post_thumbnail()): ?>
