@@ -2578,8 +2578,7 @@ fieldset .contact-form__label span {
     width: 100%;
   }
 }
-.result-details th,
-.result-details td {
+.result-details__heading, .result-details__data {
   box-sizing: border-box;
   border: 1px solid #707070;
   font-size: 18px;
@@ -2588,22 +2587,21 @@ fieldset .contact-form__label span {
   padding-top: 7px;
 }
 @media screen and (max-width: 768px) {
-  .result-details th,
-  .result-details td {
+  .result-details__heading, .result-details__data {
     padding-left: 10px;
   }
 }
-.result-details th {
+.result-details__heading {
   background-color: #E5E5E5;
   width: 140px;
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
-  .result-details th {
+  .result-details__heading {
     width: 120px;
   }
 }
-.result-details td {
+.result-details__data {
   font-weight: normal;
 }
 @media screen and (max-width: 768px) {
@@ -2669,12 +2667,12 @@ fieldset .contact-form__label span {
     gap: 20px;
   }
 }
-.result-related__item a {
+.result-related__link {
   display: flex;
   gap: 30px;
 }
 @media screen and (max-width: 768px) {
-  .result-related__item a {
+  .result-related__link {
     gap: 20px;
   }
 }

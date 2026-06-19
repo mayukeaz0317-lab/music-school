@@ -21,6 +21,7 @@
                     </li>
 
                     <?php
+
                     $taxonomy_slug = 'result_genre';
 
                     $terms = get_the_terms(get_the_ID(), $taxonomy_slug);
@@ -73,31 +74,57 @@
 
                         <div class="result-details__content">
                             <table class="result-details__table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">名前</th>
-                                        <td><?php echo esc_html(get_field('result_name')); ?></td>
+                                <tbody class="result-details__body">
+                                    <tr class="result-details__row">
+                                        <th class="result-details__heading" scope="row">
+                                            名前
+                                        </th>
+                                        <td class="result-details__data">
+                                            <?php echo esc_html(get_field('result_name')); ?>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">職業</th>
-                                        <td><?php echo esc_html(get_field('result_job')); ?></td>
+
+                                    <tr class="result-details__row">
+                                        <th class="result-details__heading" scope="row">
+                                            職業
+                                        </th>
+                                        <td class="result-details__data">
+                                            <?php echo esc_html(get_field('result_job')); ?>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">ジャンル</th>
-                                        <td><?php echo esc_html(get_field('result_genre')); ?></td>
+
+                                    <tr class="result-details__row">
+                                        <th class="result-details__heading" scope="row">
+                                            ジャンル
+                                        </th>
+                                        <td class="result-details__data">
+                                            <?php echo esc_html(get_field('result_genre')); ?>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">実績</th>
-                                        <td><?php echo esc_html(get_field('result_performance')); ?></td>
+
+                                    <tr class="result-details__row">
+                                        <th class="result-details__heading" scope="row">
+                                            実績
+                                        </th>
+                                        <td class="result-details__data">
+                                            <?php echo esc_html(get_field('result_performance')); ?>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">SNS</th>
-                                        <td>
+
+                                    <tr class="result-details__row">
+                                        <th class="result-details__heading" scope="row">
+                                            SNS
+                                        </th>
+                                        <td class="result-details__data">
                                             <?php
                                             $sns_url = get_field('result_sns');
                                             if (!empty($sns_url)) :
                                             ?>
-                                                <a href="<?php echo esc_url($sns_url); ?>" target="_blank" rel="noopener noreferrer">
+                                                <a
+                                                    class="result-details__sns-link"
+                                                    href="<?php echo esc_url($sns_url); ?>"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
                                                     SNSを見る
                                                 </a>
                                             <?php endif; ?>
@@ -150,14 +177,10 @@
                 <h2 class="result-related__heading">関連記事</h2>
                 <ul class="result-related__list">
                     <?php
-                    // 1. 現在の記事のジャンル（ターム）を取得
                     $terms = get_the_terms(get_the_ID(), 'result_genre');
 
                     if ($terms && !is_wp_error($terms)) {
-                        // ジャンルIDを配列にまとめる
                         $term_ids = wp_list_pluck($terms, 'term_id');
-
-                        // 2. 同じジャンルの記事を取得するクエリの設定
                         $args = array(
                             'post_type' => 'result', // 卒業実績
                             'posts_per_page' => 3,    // 表示件数
@@ -179,7 +202,7 @@
                             while ($related_query->have_posts()) : $related_query->the_post();
                     ?>
                                 <li class="result-related__item">
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php the_permalink(); ?>" class="result-related__link">
                                         <div class="result-related__img">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <?php the_post_thumbnail('large'); ?>
@@ -221,7 +244,7 @@
     </article>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">
