@@ -35,7 +35,7 @@
                             <a href="<?php the_permalink(); ?>" class="result-list__link">
                                 <div class="result-list__img">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php the_post_thumbnail('large'); ?>
                                     <?php else : ?>
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/blog-list__img01.webp')); ?>" alt="">
                                     <?php endif; ?>

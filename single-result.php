@@ -21,7 +21,6 @@
                     </li>
 
                     <?php
-                    // ⭕️ スラッグ名をスクショから判明した 'result_genre' に修正しました！
                     $taxonomy_slug = 'result_genre';
 
                     $terms = get_the_terms(get_the_ID(), $taxonomy_slug);
