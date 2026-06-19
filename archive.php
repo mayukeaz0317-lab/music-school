@@ -24,7 +24,7 @@
             </div>
         </div>
     </nav>
-    <section class="blog-list__content">
+    <section class="blog-list">
         <div class="container">
             <h2 class="section-title section-title--blog-list"><?php esc_html(get_the_archive_title()); ?></h2>
             <ul>

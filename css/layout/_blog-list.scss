@@ -1,7 +1,7 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
-.blog-list__content {
+.blog-list {
     padding-top: 67px;
     padding-bottom: 70px;
 
@@ -9,73 +9,75 @@
         padding-top: 46px;
         padding-bottom: 59px;
     }
-}
-.blog-list__content ul {
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
 
-    @include mq($tab) {
-        gap: 39px;
-        padding: 0 50px;
-    }
-    @include mq($sp) {
-        padding: 0;
-    }
-}
-
-.blog-list__item {
-    a {
+    ul {
         display: flex;
-        gap: 50px;
+        flex-direction: column;
+        gap: 70px;
+
         @include mq($tab) {
-            gap: 30px;
-            flex-direction: column;
+            gap: 39px;
+            padding: 0 50px;
+        }
+
+        @include mq($sp) {
+            padding: 0;
         }
     }
 
-    h3 {
-        font-size: 20px;
-        line-height: 25px;
+    &__item {
+        a {
+            display: flex;
+            gap: 50px;
 
-        @include mq($tab) {
+            @include mq($tab) {
+                gap: 30px;
+                flex-direction: column;
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 25px;
+
+            @include mq($tab) {
+                line-height: 30px;
+            }
+        }
+
+        time {
+            display: block;
+            font-size: 17px;
             line-height: 30px;
+            margin-top: 3px;
+            margin-bottom: 11px;
+
+            @include mq($tab) {
+                text-align: end;
+                margin-top: 6px;
+                margin-bottom: 8px;
+            }
+
         }
     }
 
-    time {
-        display: block;
-        font-size: 17px;
-        line-height: 30px;
-        margin-top: 3px;
-        margin-bottom: 11px;
+    &__img {
+        position: relative;
+        flex-shrink: 0;
+        width: calc(260 / 880 * 100%);
+        aspect-ratio: 260 / 184;
+
+        .img-label {
+            width: 80px;
+
+            @include mq($tab) {
+                width: 90px;
+            }
+        }
 
         @include mq($tab) {
-            text-align: end;
-            margin-top: 6px;
-            margin-bottom: 8px;
-        }
-
-    }
-}
-
-.blog-list__img {
-    position: relative;
-    flex-shrink: 0;
-    width: calc(260 / 880 * 100%);
-    aspect-ratio: 260 / 184;
-
-    .img-label {
-        width: 80px;
-
-        @include mq($tab) {
-            width: 90px;
+            width: 100%;
+            height: auto;
         }
     }
-
-    @include mq($tab) {
-        width: 100%;
-        height: auto;
-    }
 }
-

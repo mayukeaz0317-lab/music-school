@@ -22,19 +22,19 @@
                 <div class="header__logo">
                     <?php $tag_name = (is_front_page() || is_home()) ? 'h1' : 'div'; ?>
                     <<?php echo $tag_name; ?> class="logo-wrapper">
-                        <a href="<?php echo esc_url(home_url('/')); ?>">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="header__logo-link">
                             <picture>
                                 <source srcset="<?php echo esc_url(get_theme_file_uri('/images/brand/logo-sp.svg')) ?>" media="(max-width: 768px)">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/images/brand/logo.svg')) ?>" class="logo__img" alt="">
+                                <img src="<?php echo esc_url(get_theme_file_uri('/images/brand/logo.svg')) ?>" class="header__logo-img" alt="">
                             </picture>
-                            <span class="logo__text">
-                                <span class="logo__text--main">きたむら</span>
-                                <span class="logo__text--sub">ミュージックスクール</span>
+                            <span class="header__logo-text">
+                                <span class="header__logo-text--main">きたむら</span>
+                                <span class="header__logo-text--sub">ミュージックスクール</span>
                             </span>
                         </a>
                     </<?php echo $tag_name; ?>>
                 </div>
-                <div class="hamburger">
+                <div class="header__hamburger">
                     <span></span>
                     <span></span>
                     <span></span>

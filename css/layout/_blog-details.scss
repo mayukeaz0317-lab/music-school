@@ -1,53 +1,55 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
-.blog-details__wrapper {
-    padding-top: 70px;
-    padding-bottom: 187px;
+.blog-details {
+    &__wrapper {
+        padding-top: 70px;
+        padding-bottom: 187px;
 
-    @include mq($tab) {
-        padding-top: 50px;
-        padding-bottom: 197px;
-    }
-}
-
-.blog-details--flex {
-    display: flex;
-    gap: 31px;
-
-    @include mq($tab) {
-        flex-direction: column;
-        gap: 30.1px;
-    }
-}
-
-article {
-    flex: 1;
-}
-
-aside {
-    flex: 0 0 250px;
-}
-
-.post__thumbnail {
-    width: 100%;
-    aspect-ratio: 60 / 35;
-    position: relative;
-
-    .img-label {
-        width: 80px;
-    }
-
-    @include mq($tab) {
-        aspect-ratio: 335 / 200;
-
-        .img-label {
-            width: 90px;
+        @include mq($tab) {
+            padding-top: 50px;
+            padding-bottom: 197px;
         }
+    }
+
+    &--flex {
+        display: flex;
+        gap: 31px;
+
+        @include mq($tab) {
+            flex-direction: column;
+            gap: 30.1px;
+        }
+    }
+
+    article {
+        flex: 1;
+    }
+
+    aside {
+        flex: 0 0 250px;
     }
 }
 
 .post {
+    &__thumbnail {
+        width: 100%;
+        aspect-ratio: 60 / 35;
+        position: relative;
+
+        .img-label {
+            width: 80px;
+        }
+
+        @include mq($tab) {
+            aspect-ratio: 335 / 200;
+
+            .img-label {
+                width: 90px;
+            }
+        }
+    }
+
     h1 {
         font-size: 25px;
         line-height: 40px;
@@ -62,15 +64,228 @@ aside {
         }
     }
 
+    &__time {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 30px;
+        margin-bottom: 21px;
+    }
+
+    &__content {
+
+        h2,
+        h3 {
+            font-size: 20px;
+            line-height: 40px;
+
+            @include mq($tab) {
+                line-height: 30px;
+            }
+        }
+
+        h2 {
+            margin-top: 28px;
+            margin-bottom: 15px;
+
+            @include mq($tab) {
+                margin-top: 39px;
+                margin-bottom: 17px;
+            }
+        }
+
+        h3 {
+            margin-top: 43.5px;
+            margin-bottom: 17px;
+            padding-left: 9.5px;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 60%;
+                transform: translateY(60%);
+                height: 100%;
+                width: 3px;
+                background-color: black;
+            }
+
+            @include mq($tab) {
+                margin-top: 50px;
+                margin-bottom: 19.5px;
+            }
+        }
+
+        ul {
+            position: relative;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 30px;
+            padding-bottom: 40.5px;
+
+            &::after {
+                position: absolute;
+                content: "";
+                height: 1px;
+                width: 100%;
+                background-color: black;
+                right: 0;
+                left: 0;
+                bottom: 0;
+            }
+
+            @include mq($tab) {
+                font-size: 16px;
+                padding-bottom: 38.5px;
+
+                &::after {
+                    height: 0;
+                }
+            }
+        }
+
+        blockquote {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background-color: rgba(232, 232, 232, 1);
+            padding-left: 67px;
+            padding-right: 30px;
+            padding-top: 18px;
+            padding-bottom: 10px;
+            position: relative;
+
+            @include mq($tab) {
+                padding-top: 17px;
+                padding-bottom: 11px;
+                padding-left: 70px;
+                padding-right: 20px;
+                gap: 17.5px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 100;
+                top: 20px;
+                left: 30px;
+                width: 27px; // アイコンのサイズに合わせて調整
+                height: 23.8px; // アイコンのサイズに合わせて調整
+                background-image: url(../images/icons/icon-blockquote.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: underline;
+            color: rgba(203, 0, 0, 1);
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 33px;
+            margin-top: 27px;
+            margin-bottom: 54px;
+
+            @include mq($tab) {
+                margin-bottom: 45px;
+            }
+        }
+
+        figure {
+            width: 335px;
+            height: 200px;
+            margin-top: 17px;
+            margin-bottom: 28px;
+
+            @include mq($tab) {
+                margin-top: 39px;
+                margin-bottom: 27px;
+            }
+
+            @include mq($sp) {
+                width: 100%;
+                aspect-ratio: 335 / 200;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 78px;
+
+        a {
+            flex: 1;
+        }
+    }
+
+    &__nav-label {
+        display: flex;
+        gap: 6px;
+        color: white;
+        background-color: black;
+        padding-top: 4px;
+        padding-bottom: 3px;
+        margin-bottom: 15px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 30px;
+        white-space: nowrap;
+
+        &--prev {
+            padding-left: 20px;
+            padding-right: 150px;
+
+            @include mq($tab) {
+                padding-right: 46px;
+            }
+        }
+
+        &--next {
+            padding-left: 152px;
+            padding-right: 18px;
+
+            @include mq($tab) {
+                padding-left: 48px;
+            }
+        }
+    }
+
+    &__nav-info {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 93px;
+
+        p {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        @include mq($tab) {
+            margin-bottom: 64px;
+        }
+    }
+
+    @include mq($tab) {
+        gap: 22px;
+    }
+
+    &__nav-img {
+        width: 98px;
+        height: 68px;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        @include mq($tab) {
+            display: none;
+        }
+    }
+
 }
 
-.post__time {
-    display: inline-block;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 30px;
-    margin-bottom: 21px;
-}
+
 
 .blog-details__sns-list {
     display: flex;
@@ -166,219 +381,6 @@ aside {
         }
     }
 
-}
-
-.post__content {
-
-    h2,
-    h3 {
-        font-size: 20px;
-        line-height: 40px;
-
-        @include mq($tab) {
-            line-height: 30px;
-        }
-    }
-
-    h2 {
-        margin-top: 28px;
-        margin-bottom: 15px;
-
-        @include mq($tab) {
-            margin-top: 39px;
-            margin-bottom: 17px;
-        }
-    }
-
-    h3 {
-        margin-top: 43.5px;
-        margin-bottom: 17px;
-        padding-left: 9.5px;
-        position: relative;
-
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 60%;
-            transform: translateY(60%);
-            height: 100%;
-            width: 3px;
-            background-color: black;
-        }
-
-        @include mq($tab) {
-            margin-top: 50px;
-            margin-bottom: 19.5px;
-        }
-    }
-
-    ul {
-        position: relative;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 30px;
-        padding-bottom: 40.5px;
-
-        &::after {
-            position: absolute;
-            content: "";
-            height: 1px;
-            width: 100%;
-            background-color: black;
-            right: 0;
-            left: 0;
-            bottom: 0;
-        }
-
-        @include mq($tab) {
-            font-size: 16px;
-            padding-bottom: 38.5px;
-
-            &::after {
-                height: 0;
-            }
-        }
-    }
-
-    blockquote {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        background-color: rgba(232, 232, 232, 1);
-        padding-left: 67px;
-        padding-right: 30px;
-        padding-top: 18px;
-        padding-bottom: 10px;
-        position: relative;
-
-        @include mq($tab) {
-            padding-top: 17px;
-            padding-bottom: 11px;
-            padding-left: 70px;
-            padding-right: 20px;
-            gap: 17.5px;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            z-index: 100;
-            top: 20px;
-            left: 30px;
-            width: 27px; // アイコンのサイズに合わせて調整
-            height: 23.8px; // アイコンのサイズに合わせて調整
-            background-image: url(../images/icons/icon-blockquote.svg);
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-    }
-
-    a {
-        display: inline-block;
-        text-decoration: underline;
-        color: rgba(203, 0, 0, 1);
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 33px;
-        margin-top: 27px;
-        margin-bottom: 54px;
-
-        @include mq($tab) {
-            margin-bottom: 45px;
-        }
-    }
-
-    figure {
-        width: 335px;
-        height: 200px;
-        margin-top: 17px;
-        margin-bottom: 28px;
-
-        @include mq($tab) {
-            margin-top: 39px;
-            margin-bottom: 27px;
-        }
-
-        @include mq($sp) {
-            width: 100%;
-            aspect-ratio: 335 / 200;
-        }
-    }
-}
-
-.post {
-    &__nav {
-        display: flex;
-        gap: 78px;
-    }
-
-    a {
-        flex: 1;
-    }
-
-    &__nav-label {
-        display: flex;
-        gap: 6px;
-        color: white;
-        background-color: black;
-        padding-top: 4px;
-        padding-bottom: 3px;
-        margin-bottom: 15px;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 30px;
-        white-space: nowrap;
-
-        &--prev {
-            padding-left: 20px;
-            padding-right: 150px;
-
-            @include mq($tab) {
-                padding-right: 46px;
-            }
-        }
-
-        &--next {
-            padding-left: 152px;
-            padding-right: 18px;
-
-            @include mq($tab) {
-                padding-left: 48px;
-            }
-        }
-    }
-
-    &__nav-info {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 93px;
-
-        p {
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 25px;
-        }
-
-        @include mq($tab) {
-            margin-bottom: 64px;
-        }
-    }
-
-    @include mq($tab) {
-        gap: 22px;
-    }
-}
-
-.post__nav-img {
-    width: 98px;
-    height: 68px;
-    flex-shrink: 0;
-    flex-grow: 0;
-
-    @include mq($tab) {
-        display: none;
-    }
 }
 
 .related-posts {

@@ -43,7 +43,7 @@
             <h2 class="section-title section-title--pricing-plan">プラン内容・月額料金</h2>
             <div class="pricing-table__wrapper">
                 <table class="pricing-table">
-                    <thead>
+                    <thead class="pricing-table__head">
                         <tr>
                             <th></th>
                             <th scope="col" class="pricing-table__label pricing-table__label--plan">ベーシック<br class="sp-only">プラン
@@ -54,7 +54,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="pricing-table__body">
                         <tr>
                             <th scope="row" class="pricing-table__label pricing-table__label--price">月額料金</th>
                             <td class="pricing-table__data pricing-table__data--price">39,000円</td>

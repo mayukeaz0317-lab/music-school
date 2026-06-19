@@ -1,52 +1,60 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
+
 .breadcrumbs {
     background-color: rgba(232, 232, 232, 1);
-}
 
-.breadcrumbs__inner {
-    padding-top: 10px;
-    padding-bottom: 6px;
-}
+    &__inner {
+        padding-top: 10px;
+        padding-bottom: 6px;
+    }
 
-.breadcrumbs__list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    @include mq($tab){
-        row-gap: 5px;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+
+        @include mq($tab) {
+            row-gap: 5px;
+        }
     }
-}
-.breadcrumbs__item{
-    height: 33px;
-    display: flex;
-    align-items: center;
-    @include mq($tab){
-        height: auto;
+
+    &__item {
+        height: 33px;
+        display: flex;
+        align-items: center;
+
+        @include mq($tab) {
+            height: auto;
+        }
     }
-}
-.breadcrumbs__item a{
-    display: inline-block;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 33px;
-    @include mq($tab){
-        line-height: 1.0;
+
+    &__item a {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 33px;
+
+        @include mq($tab) {
+            line-height: 1.0;
+        }
     }
-}
-.breadcrumbs__item:not(:last-child)::after{
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 33px;
-    background-image: url("../images/icons/矢印.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-    margin-left: 21px;
-    margin-top: 3.5px;
-    @include mq($tab){
-height: 16px;
+
+    &__item:not(:last-child)::after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 33px;
+        background-image: url("../images/icons/矢印.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+        margin-left: 21px;
+        margin-top: 3.5px;
+
+        @include mq($tab) {
+            height: 16px;
+        }
     }
 }

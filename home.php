@@ -24,7 +24,7 @@
             </div>
         </div>
     </nav>
-    <section class="blog-list__content">
+    <section class="blog-list">
         <div class="container">
             <h2 class="section-title section-title--blog-list">ブログ一覧</h2>
             <ul>
