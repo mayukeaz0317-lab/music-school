@@ -58,27 +58,27 @@
                 <ul class="blog-details__sns-list">
                     <li class="sns__item sns__item--facebook">
                         <a href="<?php echo esc_url('https://www.facebook.com/share.php?u=' . $share_url); ?>" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-facebook.svg')); ?>" alt=""><span>Facebook</span>
+                            <div class="sns__img-wrap"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-facebook.svg')); ?>" alt=""></div><span>Facebook</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--twitter">
                         <a href="<?php echo esc_url('https://twitter.com/share?url=' . $share_url . '&text=' . $share_title); ?>" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-twitter.svg')); ?>" alt=""><span>Twitter</span>
+                            <div class="sns__img-wrap"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-twitter.svg')); ?>" alt=""></div><span>Twitter</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--line">
                         <a href="<?php echo esc_url('https://social-plugins.line.me/lineit/share?url=' . $share_url); ?>" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-line.svg')); ?>" alt=""><span>LINE</span>
+                            <div class="sns__img-wrap"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-line.svg')); ?>" alt=""></div><span>LINE</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--hatena">
                         <a href="#">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-hatena.svg')) ?>" alt="Hatena"><span>Hatena</span>
+                            <div class="sns__img-wrap"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-hatena.svg')) ?>" alt="Hatena"></div><span>Hatena</span>
                         </a>
                     </li>
                     <li class="sns__item sns__item--pocket">
                         <a href="#">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-pocket.svg')) ?>" alt="Pocket"><span>Pocket</span>
+                            <div class="sns__img-wrap"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/icon-share-pocket.svg')) ?>" alt="Pocket"></div><span>Pocket</span>
                         </a>
                     </li>
                 </ul>
@@ -184,7 +184,7 @@
     </div>
     <div class="back-to-top">
         <a href="#header">
-            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
+            <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
     <div class="contact-cta btn">

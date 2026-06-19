@@ -93,69 +93,68 @@ aside {
         line-height: 1.0;
         color: white;
 
-        &--facebook {
-            background-color: #425893;
-            width: 105px;
 
-            a {
-                gap: 13.5px;
-            }
+        a {
+
+            height: 40px;
 
             @include mq($tab) {
                 width: 65px;
+            }
+        }
+
+        &--facebook {
+            background-color: #425893;
+
+            a {
+                width: 105px;
+                gap: 13.5px;
             }
         }
 
         &--twitter {
             background-color: #4A9FEB;
-            width: 88px;
+
 
             a {
+                width: 88px;
                 gap: 10px;
-            }
-
-            @include mq($tab) {
-                width: 65px;
             }
         }
 
         &--hatena {
             background-color: #4A9FEB;
-            width: 93px;
+
 
             a {
+                width: 93px;
                 gap: 11px;
             }
 
-            @include mq($tab) {
-                width: 65px;
-            }
+
         }
 
         &--line {
             background-color: #52B534;
-            width: 81px;
+
 
             a {
+                width: 81px;
                 gap: 8.4px;
             }
 
-            @include mq($tab) {
-                width: 65px;
-            }
         }
 
         &--pocket {
             background-color: #DC4F5A;
-            width: 91px;
+
 
             a {
+                width: 91px;
                 gap: 9.24px;
             }
 
-            @include mq($tab) {
-                width: 65px;
-            }
+
         }
     }
 
@@ -166,6 +165,7 @@ aside {
             display: none;
         }
     }
+
 }
 
 .post__content {
