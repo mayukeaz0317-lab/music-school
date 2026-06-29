@@ -1,15 +1,21 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   font-family: "Yu Gothic Medium", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
   box-sizing: border-box;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   position: relative;
+  flex: 1;
 }
 
 .container {
@@ -2355,6 +2361,15 @@ fieldset .contact-form__label span {
   }
 }
 
+.page-thanks .fv {
+  background-image: url(../images/photo/contact__fv.webp);
+}
+@media screen and (max-width: 768px) {
+  .page-thanks .fv {
+    background-image: url(../images/photo/contact__fv--sp.webp);
+  }
+}
+
 .post-type-archive-result .fv {
   background-image: url(../images/result/result-list__fv.webp);
 }
@@ -2842,6 +2857,15 @@ fieldset .contact-form__label span {
   }
 }
 
+.error404 .fv {
+  background-image: url(../images/photo/404__fv.webp);
+}
+@media screen and (max-width: 768px) {
+  .error404 .fv {
+    background-image: url(../images/photo/404__fv--sp.webp);
+  }
+}
+
 .error {
   text-align: center;
   padding-top: 68px;
@@ -2853,6 +2877,9 @@ fieldset .contact-form__label span {
     padding-top: 47px;
     padding-bottom: 50px;
   }
+}
+.error .container {
+  vertical-align: center;
 }
 .error__text {
   margin-bottom: 40px;

@@ -1,18 +1,32 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
-.contact-send{
+
+.contact-send {
     text-align: center;
     padding-top: 67px;
     padding-bottom: 90px;
+
     @include mq($tab) {
         text-align: start;
         padding-top: 47px;
         padding-bottom: 50px;
     }
-    &__text{
+
+    &__text {
         margin-bottom: 40px;
+
         @include mq($tab) {
             margin-bottom: 39px;
+        }
+    }
+}
+
+.page-thanks {
+    .fv {
+        background-image: url(../images/photo/contact__fv.webp);
+
+        @include mq($tab) {
+            background-image: url(../images/photo/contact__fv--sp.webp);
         }
     }
 }

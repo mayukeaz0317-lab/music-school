@@ -1,6 +1,17 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
+.error404 {
+    .fv {
+        background-image: url(../images/photo/404__fv.webp);
+
+        @include mq($tab) {
+            background-image: url(../images/photo/404__fv--sp.webp);
+        }
+    }
+
+}
+
 .error {
     text-align: center;
     padding-top: 68px;
@@ -10,6 +21,10 @@
         text-align: start;
         padding-top: 47px;
         padding-bottom: 50px;
+    }
+
+    .container {
+        vertical-align: center;
     }
 
     &__text {
