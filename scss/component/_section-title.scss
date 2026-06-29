@@ -1,0 +1,11 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+.c-section-title {
+    text-align: center;
+    font-size: 25px;
+    line-height: 38px;
+
+    @include mq($tab) {
+        line-height: 40px;
+    }
+}

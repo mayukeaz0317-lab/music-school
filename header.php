@@ -15,7 +15,15 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+$body_class = '';
+
+if (is_page()) {
+    $body_class = 'page-' . get_post_field('post_name', get_queried_object_id());
+}
+?>
+
+<body <?php body_class($body_class); ?>>
     <?php wp_body_open(); ?>
     <header id="header">
         <div class="container">
@@ -45,7 +53,7 @@
                         <li><a href="<?php echo esc_url(home_url('/plan/')); ?>">料金</a></li>
                         <li><a href="<?php echo esc_url(home_url('/blog/')); ?>">ブログ</a></li>
                         <li><a href="<?php echo esc_url(home_url('/result/')); ?>">卒業実績</a></li>
-                        <li class="header__btn btn"><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
+                        <li class="header__btn c-btn"><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
                     </ul>
                 </nav>
             </div>

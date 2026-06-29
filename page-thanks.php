@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-    <section class="fv fv--contact fv--lower">
+    <section class="fv fv--lower">
         <h1>お問い合わせ</h1>
     </section>
     <nav class="breadcrumbs" aria-label="パンくずリスト">
@@ -30,7 +30,7 @@
         <div class="container">
             <h2 class="sr-only">お問い合わせの送信が完了しました</h2>
             <p class="contact-send__text">お問い合わせいただきありがとうございました。<br>内容確認後、担当者よりメールにてご連絡いたします。</p>
-            <div class="btn btn--contact-send"><a href="<?php echo esc_url(home_url('/')); ?>">ホームへ戻る</a></div>
+            <div class="c-btn u-center"><a href="<?php echo esc_url(home_url('/')); ?>">ホームへ戻る</a></div>
         </div>
     </section>
 </main>

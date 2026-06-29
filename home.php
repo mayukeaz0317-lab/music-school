@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-    <section class="fv fv--blog-list fv--lower">
+    <section class="fv fv--lower">
         <h1>ブログ</h1>
     </section>
     <nav class="breadcrumbs" aria-label="パンくずリスト">
@@ -26,7 +26,7 @@
     </nav>
     <section class="blog-list">
         <div class="container">
-            <h2 class="section-title section-title--blog-list">ブログ一覧</h2>
+            <h2 class="c-section-title">ブログ一覧</h2>
             <ul>
                 <?php if (have_posts()): while (have_posts()): the_post(); ?>
                         <li class="blog-list__item">
@@ -37,7 +37,7 @@
                                     <?php else : ?>
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.webp')); ?>" alt="画像がありません">
                                     <?php endif; ?>
-                                    <span class="img-label">
+                                    <span class="c-img-label">
                                         <?php $cat = get_the_category();
                                         if (!empty($cat)) echo esc_html($cat[0]->name); ?>
                                     </span>
@@ -59,7 +59,7 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
-    <div class="contact-cta btn">
+    <div class="contact-cta c-btn">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
     </div>
     <?php

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-    <section class="fv fv--plan fv--lower">
+    <section class="fv fv--lower">
         <h1>プラン・料金</h1>
     </section>
     <nav class="breadcrumbs" aria-label="パンくずリスト">
@@ -28,11 +28,11 @@
     </nav>
     <section class="price-struct">
         <div class="container">
-            <h2 class="section-title section-title--price-struct">料金体系</h2>
+            <h2 class="c-section-title">料金体系</h2>
             <div class="price-struct__formula">
-                <p class="btn btn--price-struct">入会金 39,000円</p>
+                <p class="c-btn">入会金 39,000円</p>
                 <div class="price-struct__plus"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/plus.png')) ?>" alt="プラス"></div>
-                <p class="btn btn--price-struct">月額料金</p>
+                <p class="c-btn">月額料金</p>
             </div>
             <p class="price-struct__text">
                 きたむらミュージックスクールでは、個人に合わせたサポートを行う完全オーダーメイドのプランを用意しており、サポート内容により月額料金が異なります。担当者があなたに最適なプランを提案いたしますので、お気軽にお問い合わせください。※すべての料金は税込価格となります。</p>
@@ -40,7 +40,7 @@
     </section>
     <section class="pricing-plan">
         <div class="container">
-            <h2 class="section-title section-title--pricing-plan">プラン内容・月額料金</h2>
+            <h2 class="c-section-title">プラン内容・月額料金</h2>
             <div class="pricing-table__wrapper">
                 <table class="pricing-table">
                     <thead class="pricing-table__head">
@@ -140,7 +140,7 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
-    <div class="contact-cta btn">
+    <div class="contact-cta c-btn">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
     </div>
 </main>

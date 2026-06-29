@@ -37,16 +37,18 @@
         aspect-ratio: 60 / 35;
         position: relative;
 
-        .img-label {
+        .c-img-label {
             width: 80px;
+
+            @include mq($tab) {
+                width: 90px;
+
+            }
         }
 
         @include mq($tab) {
             aspect-ratio: 335 / 200;
 
-            .img-label {
-                width: 90px;
-            }
         }
     }
 
@@ -451,7 +453,7 @@
     flex-shrink: 0;
 
 
-    .img-label {
+    .c-img-label {
         width: 80px;
     }
 

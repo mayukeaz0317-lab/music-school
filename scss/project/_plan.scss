@@ -1,11 +1,36 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
+.page-plan {
+    .fv {
+        background-image: url(../images/photo/plan__fv.webp);
+
+        @include mq($tab) {
+            background-image: url(../images/photo/plan__fv--sp.webp);
+        }
+    }
+
+}
+
 .price-struct {
     padding-top: 67px;
 
     @include mq($tab) {
         padding-top: 46px;
+    }
+
+    .c-section-title {
+        margin-bottom: 40px;
+
+        @include mq($tab) {
+            margin-bottom: 39px;
+        }
+    }
+
+    .c-btn {
+        width: 210px;
+        height: 60px;
+        font-size: 20px;
     }
 
     &__formula {
@@ -37,6 +62,14 @@
 .pricing-plan {
     padding-top: 57px;
     padding-bottom: 223px;
+
+    .c-section-title {
+        margin-bottom: 50px;
+
+        @include mq($tab) {
+            margin-bottom: 6px;
+        }
+    }
 
     @include mq($tab) {
         padding-top: 38px;

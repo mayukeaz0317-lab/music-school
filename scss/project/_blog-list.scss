@@ -1,6 +1,16 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
+.blog {
+    .fv {
+        background-image: url(../images/photo/blog-list__fv.webp);
+
+        @include mq($tab) {
+            background-image: url(../images/photo/blog-list__fv--sp.webp);
+        }
+    }
+}
+
 .blog-list {
     padding-top: 67px;
     padding-bottom: 70px;
@@ -8,6 +18,14 @@
     @include mq($tab) {
         padding-top: 46px;
         padding-bottom: 59px;
+    }
+
+    .c-section-title {
+        margin-bottom: 38px;
+
+        @include mq($tab) {
+            margin-bottom: 39px;
+        }
     }
 
     ul {
@@ -67,7 +85,7 @@
         width: calc(260 / 880 * 100%);
         aspect-ratio: 260 / 184;
 
-        .img-label {
+        .c-img-label {
             width: 80px;
 
             @include mq($tab) {

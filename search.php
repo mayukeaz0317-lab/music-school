@@ -40,7 +40,7 @@
                                     <?php else: ?>
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/blog-list__img01.webp')); ?>" alt="">
                                     <?php endif; ?>
-                                    <span class="img-label">
+                                    <span class="c-img-label">
                                         <?php
                                         if (get_post_type() === 'result') {
                                             $terms = get_the_terms(get_the_ID(), 'result_genre');
@@ -87,7 +87,7 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg')) ?>" alt="ページトップへ戻る">
         </a>
     </div>
-    <div class="contact-cta btn">
+    <div class="contact-cta c-btn">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
     </div>
 </main>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-    <section class="fv fv--index">
+    <section class="fv">
         <h2>「音楽で生きる」<br class="sp-only">を叶える<br>ミュージックスクール</h2>
     </section>
     <section class="concept">
@@ -28,14 +28,14 @@
         </div>
     </section>
     <section class="appeal">
-        <h2 class="index__title index__title--appeal">音楽業界初！<br>収益化までサポートする<br class="sp-only">ミュージックスクール</h2>
+        <h2 class="c-top-section-title">音楽業界初！<br>収益化までサポートする<br class="sp-only">ミュージックスクール</h2>
         <p class="appeal__desc">楽器や作詞作曲などの<br class="sp-only">技術・知識はもちろんのこと<br>
             自分で稼ぎつづけるための<br class="sp-only">ビジネス面もサポートします！
         </p>
     </section>
     <section class="reasons">
         <div class="container">
-            <h2 class="index__title index__title--reasons">きたむらミュージック<br class="sp-only">スクールが選ばれる理由</h2>
+            <h2 class="c-top-section-title">きたむらミュージック<br class="sp-only">スクールが選ばれる理由</h2>
             <ul class="reasons__list">
                 <li class="reasons__item">
                     <picture class="reasons__img">
@@ -73,7 +73,7 @@
     </section>
     <section class="testimonial">
         <div class="container">
-            <h2 class="index__title index__title--testimonial">生徒さんたちの声</h2>
+            <h2 class="c-top-section-title">生徒さんたちの声</h2>
             <div class="testimonial__slider">
                 <button class="slider-btn prev" aria-label="前へ"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/arrow-l.png')) ?>" alt=""></button>
                 <button class="slider-btn next" aria-label="次へ"><img src="<?php echo esc_url(get_theme_file_uri('/images/icons/arrow-r.png')) ?>" alt=""></button>
@@ -131,7 +131,7 @@
     </section>
     <section class="flow">
         <div class="container container--flow">
-            <h2 class="index__title index__title--flow">ご利用の流れ</h2>
+            <h2 class="c-top-section-title">ご利用の流れ</h2>
             <ol class="flow__list">
                 <li class="flow__item">
                     <h3 class="flow__title">お問い合わせ</h3>
@@ -165,7 +165,7 @@
         </div>
     </section>
     <section class="faq">
-        <h2 class="index__title index__title--faq">よくあるご質問</h2>
+        <h2 class="c-top-section-title">よくあるご質問</h2>
         <div class="container">
             <details class="faq__item">
                 <summary class="faq__question">
@@ -220,7 +220,7 @@
         </div>
     </section>
     <section class="index-blog">
-        <h2 class="index__title index__title--blog">ブログ</h2>
+        <h2 class="c-top-section-title">ブログ</h2>
         <div class="container">
             <ul class="index-blog__list">
                 <?php
@@ -239,7 +239,7 @@
                                     <?php else : ?>
                                         <img src="<?php echo esc_url(get_theme_file_uri('/images/photo/no-image.webp')); ?>" alt="画像がありません">
                                     <?php endif; ?>
-                                    <span class="img-label">
+                                    <span class="c-img-label">
                                         <?php
                                         $cat = get_the_category();
                                         if (! empty($cat)) {
@@ -266,7 +266,7 @@
             <img src="<?php echo esc_url(get_theme_file_uri('/images/icons/back-to-top.svg') )?>" alt="ページトップへ戻る">
         </a>
     </div>
-    <div class="contact-cta btn">
+    <div class="contact-cta c-btn">
         <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
     </div>
 </main>

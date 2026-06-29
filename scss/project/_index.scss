@@ -1,6 +1,34 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
+.home {
+    .fv {
+        background-image: url(../images/photo/index__fv.webp);
+        padding-top: 185px;
+        padding-bottom: 165px;
+
+        @include mq($tab) {
+            padding-top: 208px;
+            padding-bottom: 192px;
+        }
+
+        h2 {
+            font-size: 40px;
+            line-height: 60px;
+        }
+
+        @include mq($tab) {
+            background-image: url(../images/photo/index__fv--sp.webp);
+            height: 550px;
+
+            h2 {
+                font-size: 30px;
+                line-height: 50px;
+            }
+        }
+    }
+}
+
 .concept {
     padding-top: 66px;
     padding-bottom: 55px;
@@ -129,6 +157,16 @@
     padding-top: 68px;
     padding-bottom: 60px;
 
+    .c-top-section-title {
+        color: white;
+        margin-bottom: 30px;
+
+        @include mq($tab) {
+            margin-bottom: 14px;
+        }
+    }
+
+
     @include mq($tab) {
         padding-top: 49px;
         padding-bottom: 40px;
@@ -147,6 +185,14 @@
 .reasons {
     padding-top: 64px;
     padding-bottom: 90px;
+
+    .c-top-section-title {
+        margin-bottom: 28px;
+
+        @include mq($tab) {
+            margin-bottom: 36px;
+        }
+    }
 
     @include mq($tab) {
         padding-top: 49px;
@@ -260,6 +306,15 @@
         padding-bottom: 50px;
     }
 
+    .c-top-section-title {
+        color: white;
+        margin-bottom: 36px;
+
+        @include mq($tab) {
+            margin-bottom: 39px;
+        }
+    }
+
     &__list {
         display: flex;
         gap: 35px;
@@ -350,6 +405,14 @@
     @include mq($tab) {
         padding-top: 46px;
 
+    }
+
+    .c-top-section-title {
+        margin-bottom: 53px;
+
+        @include mq($tab) {
+            margin-bottom: 36px;
+        }
     }
 
 
@@ -444,6 +507,14 @@
 
     @include mq($tab) {
         padding-top: 55px;
+    }
+
+    .c-top-section-title {
+        margin-bottom: 36px;
+
+        @include mq($tab) {
+            margin-bottom: 39px;
+        }
     }
 
     &__item {
@@ -593,6 +664,16 @@
         padding-bottom: 191px;
     }
 
+    .c-top-section-title {
+        line-height: 45px;
+        margin-bottom: 38px;
+
+        @include mq($tab) {
+            margin-bottom: 39px;
+            line-height: 40px;
+        }
+    }
+
     &__list {
         display: flex;
         gap: 50px;
@@ -647,7 +728,7 @@
         line-height: 30px;
     }
 
-    .img-label {
+    .c-img-label {
         width: 80px;
 
         @include mq($tab) {

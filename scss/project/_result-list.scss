@@ -1,9 +1,23 @@
 @use "../foundation/mixin" as *;
 @use "../foundation/variables" as *;
 
+.post-type-archive-result {
+    .fv {
+        background-image: url(../images/result/result-list__fv.webp);
+
+        @include mq($tab) {
+            background-position: 50%;
+        }
+    }
+}
+
 .result-list {
     padding-top: 65px;
     padding-bottom: 71px;
+
+    .c-section-title {
+        margin-bottom: 40px;
+    }
 
     &__list {
         display: grid;
@@ -47,7 +61,8 @@
         font-size: 18px;
         line-height: 32px;
     }
-    .img-label{
+
+    .c-img-label {
         width: 100px;
     }
 }

@@ -1,0 +1,62 @@
+@use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
+
+.nav-links {
+    padding-bottom: 210px;
+    max-width: 1080px;
+    margin-inline: auto;
+    padding-inline: 100px;
+
+    @include mq($tab) {
+        padding-inline: 20px;
+        padding-bottom: 203px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        list-style: none;
+        font-size: 18px;
+        line-height: 30px;
+
+        @include mq($tab) {
+            gap: 5px;
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+    li {
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        font-weight: bold;
+
+        @include mq($tab) {
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    li .current {
+        background-color: black;
+        color: white;
+    }
+
+    span,
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+    }
+}

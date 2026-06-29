@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main>
-    <section class="fv fv--contact fv--lower">
+    <section class="fv fv--lower">
         <h1>お問い合わせ</h1>
     </section>
     <nav class="breadcrumbs" aria-label="パンくずリスト">
