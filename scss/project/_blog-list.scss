@@ -10,6 +10,15 @@
         }
     }
 }
+.archive{
+        .fv {
+        background-image: url(../images/photo/blog-list__fv.webp);
+
+        @include mq($tab) {
+            background-image: url(../images/photo/blog-list__fv--sp.webp);
+        }
+    }
+}
 
 .blog-list {
     padding-top: 67px;

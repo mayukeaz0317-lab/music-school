@@ -1426,6 +1426,15 @@ img {
   }
 }
 
+.archive .fv {
+  background-image: url(../images/photo/blog-list__fv.webp);
+}
+@media screen and (max-width: 768px) {
+  .archive .fv {
+    background-image: url(../images/photo/blog-list__fv--sp.webp);
+  }
+}
+
 .blog-list {
   padding-top: 67px;
   padding-bottom: 70px;
